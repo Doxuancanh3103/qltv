@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5958E39-5AEF-4821-93BB-FDF3ABB54FE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>btl_qltv_ver2</RootNamespace>
+    <AssemblyName>btl_qltv_ver2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\WindowsFormsApp1\WindowsFormsApp1\bin\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bean\AuthorRepoServiceBean.cs" />
+    <Compile Include="Bean\AuthorServiceBean.cs" />
+    <Compile Include="Bean\ConditionRepoServiceBean.cs" />
+    <Compile Include="Bean\ConditionServiceBean.cs" />
+    <Compile Include="Bean\EmployeeRepoServiceBean.cs" />
+    <Compile Include="Bean\EmployeeServiceBean.cs" />
+    <Compile Include="Bean\MediaRepoBean.cs" />
+    <Compile Include="Bean\MediaServiceBean.cs" />
+    <Compile Include="Bean\PatronRepoServiceBean.cs" />
+    <Compile Include="Bean\PatronServiceBean.cs" />
+    <Compile Include="common\DateUtils.cs" />
+    <Compile Include="DBConnection\SqlServerConnection.cs" />
+    <Compile Include="domain\Author.cs" />
+    <Compile Include="domain\Condition.cs" />
+    <Compile Include="domain\Employee.cs" />
+    <Compile Include="domain\Media.cs" />
+    <Compile Include="domain\Patron.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repos\AuthorRepoService.cs" />
+    <Compile Include="repos\ConditionRepoService.cs" />
+    <Compile Include="repos\EmployeeRepoService.cs" />
+    <Compile Include="repos\impl\AuthorRepoImpl.cs" />
+    <Compile Include="repos\impl\ConditionRepoImpl.cs" />
+    <Compile Include="repos\impl\EmployeeRepoImpl.cs" />
+    <Compile Include="repos\impl\LoginRepoServiceImpl.cs" />
+    <Compile Include="repos\impl\MediaRepoServiceImpl.cs" />
+    <Compile Include="repos\impl\PatronRepoImpl.cs" />
+    <Compile Include="repos\LoginRepoService.cs" />
+    <Compile Include="repos\MediaRepoService.cs" />
+    <Compile Include="repos\PatronRepoService.cs" />
+    <Compile Include="sdi\AuthorInsertSdi.cs" />
+    <Compile Include="sdi\AuthorSearchSdi.cs" />
+    <Compile Include="sdi\AuthorUpdateSdi.cs" />
+    <Compile Include="sdi\ConditionInsertSdi.cs" />
+    <Compile Include="sdi\ConditionUpdateSdi.cs" />
+    <Compile Include="sdi\EmployeeInsertSdi.cs" />
+    <Compile Include="sdi\EmployeeSearchSdi.cs" />
+    <Compile Include="sdi\EmployeeUpdateSdi.cs" />
+    <Compile Include="sdi\LoginSdi.cs" />
+    <Compile Include="sdi\MediaInsertSdi.cs" />
+    <Compile Include="sdi\MediaSearchSdi.cs" />
+    <Compile Include="sdi\MediaUpdateSdi.cs" />
+    <Compile Include="sdi\PatronInsertSdi.cs" />
+    <Compile Include="sdi\PatronSearchSdi.cs" />
+    <Compile Include="sdi\PatronUpdateSdi.cs" />
+    <Compile Include="sdo\MediaInsertSdo.cs" />
+    <Compile Include="Service\AuthorService.cs" />
+    <Compile Include="Service\ConditionService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\impl\AuthorImpl.cs" />
+    <Compile Include="Service\impl\ConditionImpl.cs" />
+    <Compile Include="Service\impl\EmployeeImpl.cs" />
+    <Compile Include="Service\impl\LoginServiceImpl.cs" />
+    <Compile Include="Service\impl\MediaImpl.cs" />
+    <Compile Include="Service\impl\PatronImpl.cs" />
+    <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\MediaService.cs" />
+    <Compile Include="Service\PatronService.cs" />
+    <Compile Include="UiControl\AuthorForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\AuthorForm.Designer.cs">
+      <DependentUpon>AuthorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\AuthorInsertUpdateSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\AuthorInsertUpdateSearchForm.Designer.cs">
+      <DependentUpon>AuthorInsertUpdateSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\AuthorSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\AuthorSearchResult.Designer.cs">
+      <DependentUpon>AuthorSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\ConditionForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\ConditionForm.Designer.cs">
+      <DependentUpon>ConditionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\ConditionInsertUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\ConditionInsertUpdateForm.Designer.cs">
+      <DependentUpon>ConditionInsertUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\EmployeeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\EmployeeInsertUpdateSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\EmployeeInsertUpdateSearchForm.Designer.cs">
+      <DependentUpon>EmployeeInsertUpdateSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\EmployeeSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\EmployeeSearchResult.Designer.cs">
+      <DependentUpon>EmployeeSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\MediaForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\MediaForm.Designer.cs">
+      <DependentUpon>MediaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\MediaInsertCustomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\MediaInsertCustomForm.Designer.cs">
+      <DependentUpon>MediaInsertCustomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\MediaResultSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\MediaResultSearchForm.Designer.cs">
+      <DependentUpon>MediaResultSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\MediaSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\MediaSearchForm.Designer.cs">
+      <DependentUpon>MediaSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\PatronForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\PatronForm.Designer.cs">
+      <DependentUpon>PatronForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\PatronInsertUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\PatronInsertUpdateForm.Designer.cs">
+      <DependentUpon>PatronInsertUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\PatronSearchResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\PatronSearchResultForm.Designer.cs">
+      <DependentUpon>PatronSearchResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\PolicyForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\PolicyForm.Designer.cs">
+      <DependentUpon>PolicyForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UiControl\AuthorForm.resx">
+      <DependentUpon>AuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\AuthorInsertUpdateSearchForm.resx">
+      <DependentUpon>AuthorInsertUpdateSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\AuthorSearchResult.resx">
+      <DependentUpon>AuthorSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\ConditionForm.resx">
+      <DependentUpon>ConditionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\ConditionInsertUpdateForm.resx">
+      <DependentUpon>ConditionInsertUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\EmployeeInsertUpdateSearchForm.resx">
+      <DependentUpon>EmployeeInsertUpdateSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\EmployeeSearchResult.resx">
+      <DependentUpon>EmployeeSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\MediaForm.resx">
+      <DependentUpon>MediaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\MediaInsertCustomForm.resx">
+      <DependentUpon>MediaInsertCustomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\MediaResultSearchForm.resx">
+      <DependentUpon>MediaResultSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\MediaSearchForm.resx">
+      <DependentUpon>MediaSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\PatronForm.resx">
+      <DependentUpon>PatronForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\PatronInsertUpdateForm.resx">
+      <DependentUpon>PatronInsertUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\PatronSearchResultForm.resx">
+      <DependentUpon>PatronSearchResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\PolicyForm.resx">
+      <DependentUpon>PolicyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateVer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginUser1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customermini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customermini1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mediamini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\condition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quatum1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c#2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\author.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\media_author.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutmini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutmini1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutmini2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updatemini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updatedmini1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insertmini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateVer1mini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
