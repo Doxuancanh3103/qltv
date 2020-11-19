@@ -33,12 +33,11 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (employeeTable.Rows.Count == 1)
+            employeeTable.Rows.Clear();
+            List<Employee> employees = employeeService.getEmployees();
+            for (int i = 0; i < employees.Count(); i++)
             {
-                List<Employee> employees = employeeService.getEmployees();
-                for (int i = 0; i < employees.Count(); i++)
-                {
-                    employeeTable.Rows.Add(new String[] {"detail",employees[i].EmployeeId1,
+                employeeTable.Rows.Add(new String[] {"detail",employees[i].EmployeeId1,
                                                     employees[i].SSN1,
                                                     employees[i].Name,
                                                     employees[i].Salary.ToString(),
@@ -46,8 +45,8 @@ namespace btl_qltv_ver2.UiControl
                                                     employees[i].Address,
                                                     employees[i].PhoneNumber,
                                                     employees[i].RoleType });
-                }
             }
+
         }
 
         public void addDataToTable(Object obj)
@@ -91,7 +90,7 @@ namespace btl_qltv_ver2.UiControl
                 String phoneNumber = employeeTable.CurrentRow.Cells[7].Value.ToString();
                 String roletype = employeeTable.CurrentRow.Cells[8].Value.ToString();
                 employeeInsertUpdateSearch.changeEnableLibraryCardNumberTextBox(false);
-                employeeInsertUpdateSearch.setData(employeeId,ssn, name,salary, dob,address, phoneNumber, roletype);
+                employeeInsertUpdateSearch.setData(employeeId, ssn, name, salary, dob, address, phoneNumber, roletype);
             }
             employeeInsertUpdateSearch.hideAccount();
             employeeInsertUpdateSearch.ShowDialog();

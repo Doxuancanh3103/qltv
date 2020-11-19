@@ -103,5 +103,45 @@ namespace btl_qltv_ver2.UiControl
         {
             this.Close();
         }
+
+        private void bunifuCustomLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lcnTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gradeTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void isbnTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cidTextBox_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

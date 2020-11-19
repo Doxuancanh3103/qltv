@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.logout = new System.Windows.Forms.Button();
             this.patronManagerButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.policiesManagerButton = new System.Windows.Forms.Button();
@@ -43,8 +48,7 @@
             this.conditionManagerButton = new System.Windows.Forms.Button();
             this.exchangeManagerButton = new System.Windows.Forms.Button();
             this.authorManagerButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.checkOutForm1 = new btl_qltv_ver2.UiControl.CheckOutForm();
             this.exchangeForm1 = new btl_qltv_ver2.UiControl.ExchangeForm();
             this.stockForm1 = new btl_qltv_ver2.UiControl.StockForm();
             this.policyForm1 = new btl_qltv_ver2.UiControl.PolicyForm();
@@ -53,10 +57,6 @@
             this.employeeForm1 = new btl_qltv_ver2.UiControl.EmployeeForm();
             this.patronForm1 = new btl_qltv_ver2.UiControl.PatronForm();
             this.mediaForm1 = new btl_qltv_ver2.UiControl.MediaForm();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.logout = new System.Windows.Forms.Button();
-            this.checkOutForm1 = new btl_qltv_ver2.UiControl.CheckOutForm();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -68,22 +68,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.bunifuTransition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 1F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
             // 
             // tableLayoutPanel1
             // 
@@ -98,7 +98,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.patronManagerButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 8, 0);
             this.tableLayoutPanel1.Controls.Add(this.policiesManagerButton, 9, 0);
             this.tableLayoutPanel1.Controls.Add(this.mediaManagerButton, 1, 0);
@@ -108,6 +107,7 @@
             this.tableLayoutPanel1.Controls.Add(this.conditionManagerButton, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.exchangeManagerButton, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.authorManagerButton, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.patronManagerButton, 0, 0);
             this.bunifuTransition1.SetDecoration(this.tableLayoutPanel1, BunifuAnimatorNS.DecorationType.None);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 689);
@@ -117,6 +117,76 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1112, 100);
             this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel2);
+            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1112, 689);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.checkOutForm1);
+            this.panel4.Controls.Add(this.exchangeForm1);
+            this.panel4.Controls.Add(this.stockForm1);
+            this.panel4.Controls.Add(this.policyForm1);
+            this.panel4.Controls.Add(this.conditionForm1);
+            this.panel4.Controls.Add(this.authorForm1);
+            this.panel4.Controls.Add(this.employeeForm1);
+            this.panel4.Controls.Add(this.patronForm1);
+            this.panel4.Controls.Add(this.mediaForm1);
+            this.bunifuTransition1.SetDecoration(this.panel4, BunifuAnimatorNS.DecorationType.None);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 41);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1112, 648);
+            this.panel4.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1112, 41);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.logout);
+            this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(975, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(137, 41);
+            this.panel3.TabIndex = 1;
+            // 
+            // logout
+            // 
+            this.logout.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuTransition1.SetDecoration(this.logout, BunifuAnimatorNS.DecorationType.None);
+            this.logout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Image = global::btl_qltv_ver2.Properties.Resources.logoutmini2;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 0);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(137, 40);
+            this.logout.TabIndex = 0;
+            this.logout.Text = "Logout";
+            this.logout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logout.UseVisualStyleBackColor = false;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // patronManagerButton
             // 
@@ -287,35 +357,15 @@
             this.authorManagerButton.UseVisualStyleBackColor = true;
             this.authorManagerButton.Click += new System.EventHandler(this.authorManagerButton_Click);
             // 
-            // panel1
+            // checkOutForm1
             // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel2);
-            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 689);
-            this.panel1.TabIndex = 13;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.checkOutForm1);
-            this.panel4.Controls.Add(this.exchangeForm1);
-            this.panel4.Controls.Add(this.stockForm1);
-            this.panel4.Controls.Add(this.policyForm1);
-            this.panel4.Controls.Add(this.conditionForm1);
-            this.panel4.Controls.Add(this.authorForm1);
-            this.panel4.Controls.Add(this.employeeForm1);
-            this.panel4.Controls.Add(this.patronForm1);
-            this.panel4.Controls.Add(this.mediaForm1);
-            this.bunifuTransition1.SetDecoration(this.panel4, BunifuAnimatorNS.DecorationType.None);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 41);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1112, 648);
-            this.panel4.TabIndex = 1;
+            this.bunifuTransition1.SetDecoration(this.checkOutForm1, BunifuAnimatorNS.DecorationType.None);
+            this.checkOutForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkOutForm1.Location = new System.Drawing.Point(0, 0);
+            this.checkOutForm1.Name = "checkOutForm1";
+            this.checkOutForm1.Size = new System.Drawing.Size(1112, 648);
+            this.checkOutForm1.TabIndex = 8;
+            this.checkOutForm1.Visible = false;
             // 
             // exchangeForm1
             // 
@@ -400,56 +450,6 @@
             this.mediaForm1.TabIndex = 0;
             this.mediaForm1.Visible = false;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1112, 41);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.logout);
-            this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(975, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(137, 41);
-            this.panel3.TabIndex = 1;
-            // 
-            // logout
-            // 
-            this.logout.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuTransition1.SetDecoration(this.logout, BunifuAnimatorNS.DecorationType.None);
-            this.logout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.Image = global::btl_qltv_ver2.Properties.Resources.logoutmini2;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 0);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(137, 40);
-            this.logout.TabIndex = 0;
-            this.logout.Text = "Logout";
-            this.logout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logout.UseVisualStyleBackColor = false;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
-            // checkOutForm1
-            // 
-            this.bunifuTransition1.SetDecoration(this.checkOutForm1, BunifuAnimatorNS.DecorationType.None);
-            this.checkOutForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkOutForm1.Location = new System.Drawing.Point(0, 0);
-            this.checkOutForm1.Name = "checkOutForm1";
-            this.checkOutForm1.Size = new System.Drawing.Size(1112, 648);
-            this.checkOutForm1.TabIndex = 8;
-            this.checkOutForm1.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -462,6 +462,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

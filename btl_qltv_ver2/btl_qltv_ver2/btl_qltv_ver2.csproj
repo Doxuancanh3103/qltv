@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Bean\AuthorRepoServiceBean.cs" />
     <Compile Include="Bean\AuthorServiceBean.cs" />
+    <Compile Include="Bean\CheckOutRepoServiceBean.cs" />
+    <Compile Include="Bean\CheckOutServiceBean.cs" />
     <Compile Include="Bean\ConditionRepoServiceBean.cs" />
     <Compile Include="Bean\ConditionServiceBean.cs" />
     <Compile Include="Bean\EmployeeRepoServiceBean.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="common\DateUtils.cs" />
     <Compile Include="DBConnection\SqlServerConnection.cs" />
     <Compile Include="domain\Author.cs" />
+    <Compile Include="domain\CheckOut.cs" />
     <Compile Include="domain\Condition.cs" />
     <Compile Include="domain\Employee.cs" />
     <Compile Include="domain\Exchange.cs" />
@@ -91,10 +94,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repos\AuthorRepoService.cs" />
+    <Compile Include="repos\CheckOutRepoService.cs" />
     <Compile Include="repos\ConditionRepoService.cs" />
     <Compile Include="repos\EmployeeRepoService.cs" />
     <Compile Include="repos\ExchangeRepoService.cs" />
     <Compile Include="repos\impl\AuthorRepoImpl.cs" />
+    <Compile Include="repos\impl\CheckOutRepoImpl.cs" />
     <Compile Include="repos\impl\ConditionRepoImpl.cs" />
     <Compile Include="repos\impl\EmployeeRepoImpl.cs" />
     <Compile Include="repos\impl\ExchangeRepoImpl.cs" />
@@ -111,6 +116,8 @@
     <Compile Include="sdi\AuthorInsertSdi.cs" />
     <Compile Include="sdi\AuthorSearchSdi.cs" />
     <Compile Include="sdi\AuthorUpdateSdi.cs" />
+    <Compile Include="sdi\CheckOutInsertSdi.cs" />
+    <Compile Include="sdi\CheckOutUpdateSdi.cs" />
     <Compile Include="sdi\ConditionInsertSdi.cs" />
     <Compile Include="sdi\ConditionUpdateSdi.cs" />
     <Compile Include="sdi\EmployeeInsertSdi.cs" />
@@ -131,10 +138,12 @@
     <Compile Include="sdi\StockUpdateSdi.cs" />
     <Compile Include="sdo\MediaInsertSdo.cs" />
     <Compile Include="Service\AuthorService.cs" />
+    <Compile Include="Service\CheckOutService.cs" />
     <Compile Include="Service\ConditionService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\ExchangeService.cs" />
     <Compile Include="Service\impl\AuthorImpl.cs" />
+    <Compile Include="Service\impl\CheckOutImpl.cs" />
     <Compile Include="Service\impl\ConditionImpl.cs" />
     <Compile Include="Service\impl\EmployeeImpl.cs" />
     <Compile Include="Service\impl\ExchangeImpl.cs" />
@@ -171,6 +180,12 @@
     </Compile>
     <Compile Include="UiControl\CheckOutForm.Designer.cs">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\CheckOutInsertUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\CheckOutInsertUpdateForm.Designer.cs">
+      <DependentUpon>CheckOutInsertUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UiControl\ConditionForm.cs">
       <SubType>UserControl</SubType>
@@ -307,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\CheckOutForm.resx">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\CheckOutInsertUpdateForm.resx">
+      <DependentUpon>CheckOutInsertUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\ConditionForm.resx">
       <DependentUpon>ConditionForm.cs</DependentUpon>

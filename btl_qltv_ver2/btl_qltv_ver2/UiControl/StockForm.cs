@@ -49,17 +49,17 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (stockTable.Rows.Count == 1)
+
+            stockTable.Rows.Clear();
+            List<Stock> stocks = stockService.getStocks();
+            for (int i = 0; i < stocks.Count(); i++)
             {
-                List<Stock> stocks = stockService.getStocks();
-                for (int i = 0; i < stocks.Count(); i++)
-                {
-                    stockTable.Rows.Add(new String[] {stocks[i].Isbn.ToString(),
+                stockTable.Rows.Add(new String[] {stocks[i].Isbn.ToString(),
                                                     stocks[i].Grade,
                                                     stocks[i].Amount.ToString(),
                                                     stocks[i].OrderCost.ToString()});
-                }
             }
+
         }
 
         private void update_Click(object sender, EventArgs e)

@@ -45,15 +45,14 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (policyTable.Rows.Count == 1)
+            policyTable.Rows.Clear();
+            List<Policy> policies = policyService.getPolicies();
+            for (int i = 0; i < policies.Count(); i++)
             {
-                List<Policy> policies = policyService.getPolicies();
-                for (int i = 0; i < policies.Count(); i++)
-                {
-                    policyTable.Rows.Add(new String[] {policies[i].Description,
+                policyTable.Rows.Add(new String[] {policies[i].Description,
                                                     policies[i].Value.ToString()});
-                }
             }
+
         }
 
         private void update_Click(object sender, EventArgs e)

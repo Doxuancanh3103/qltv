@@ -33,3 +33,4 @@ C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.U
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.ExchangeForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.ExchangeInsertUpdateSearchForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.CheckOutForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.CheckOutInsertUpdateForm.resources

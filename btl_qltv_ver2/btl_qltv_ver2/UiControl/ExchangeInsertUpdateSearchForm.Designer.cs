@@ -35,10 +35,10 @@
             this.lcnTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.gradeTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.isbnTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.cidTextBox = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.updateCustom = new System.Windows.Forms.Button();
             this.insertCustom = new System.Windows.Forms.Button();
-            this.cidTextBox = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -50,6 +50,7 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(193, 25);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Library Card Number:";
+            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
             // 
             // bunifuCustomLabel2
             // 
@@ -60,6 +61,7 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(56, 25);
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "ISBN:";
+            this.bunifuCustomLabel2.Click += new System.EventHandler(this.bunifuCustomLabel2_Click);
             // 
             // bunifuCustomLabel4
             // 
@@ -70,6 +72,7 @@
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(147, 25);
             this.bunifuCustomLabel4.TabIndex = 3;
             this.bunifuCustomLabel4.Text = "Checked In Date:";
+            this.bunifuCustomLabel4.Click += new System.EventHandler(this.bunifuCustomLabel4_Click);
             // 
             // bunifuCustomLabel5
             // 
@@ -80,6 +83,7 @@
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(65, 25);
             this.bunifuCustomLabel5.TabIndex = 4;
             this.bunifuCustomLabel5.Text = "Grade:";
+            this.bunifuCustomLabel5.Click += new System.EventHandler(this.bunifuCustomLabel5_Click);
             // 
             // lcnTextBox
             // 
@@ -99,6 +103,7 @@
             this.lcnTextBox.Size = new System.Drawing.Size(312, 45);
             this.lcnTextBox.TabIndex = 5;
             this.lcnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lcnTextBox.OnValueChanged += new System.EventHandler(this.lcnTextBox_OnValueChanged);
             // 
             // gradeTextBox
             // 
@@ -118,6 +123,7 @@
             this.gradeTextBox.Size = new System.Drawing.Size(312, 49);
             this.gradeTextBox.TabIndex = 7;
             this.gradeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.gradeTextBox.OnValueChanged += new System.EventHandler(this.gradeTextBox_OnValueChanged);
             // 
             // isbnTextBox
             // 
@@ -137,6 +143,16 @@
             this.isbnTextBox.Size = new System.Drawing.Size(312, 53);
             this.isbnTextBox.TabIndex = 8;
             this.isbnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.isbnTextBox.OnValueChanged += new System.EventHandler(this.isbnTextBox_OnValueChanged);
+            // 
+            // cidTextBox
+            // 
+            this.cidTextBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.cidTextBox.Location = new System.Drawing.Point(42, 480);
+            this.cidTextBox.Name = "cidTextBox";
+            this.cidTextBox.Size = new System.Drawing.Size(200, 22);
+            this.cidTextBox.TabIndex = 19;
+            this.cidTextBox.ValueChanged += new System.EventHandler(this.cidTextBox_ValueChanged);
             // 
             // button1
             // 
@@ -182,14 +198,6 @@
             this.insertCustom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.insertCustom.UseVisualStyleBackColor = true;
             this.insertCustom.Click += new System.EventHandler(this.insertCustom_Click);
-            // 
-            // cidTextBox
-            // 
-            this.cidTextBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.cidTextBox.Location = new System.Drawing.Point(42, 480);
-            this.cidTextBox.Name = "cidTextBox";
-            this.cidTextBox.Size = new System.Drawing.Size(200, 22);
-            this.cidTextBox.TabIndex = 19;
             // 
             // ExchangeInsertUpdateSearchForm
             // 

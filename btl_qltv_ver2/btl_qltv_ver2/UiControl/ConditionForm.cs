@@ -39,20 +39,18 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (conditionTable.Rows.Count == 1)
+            conditionTable.Rows.Clear();
+            List<Condition> condtions = conditionService.getConditions();
+            for (int i = 0; i < condtions.Count(); i++)
             {
-                List<Condition> condtions = conditionService.getConditions();
-                for (int i = 0; i < condtions.Count(); i++)
-                {
-                    conditionTable.Rows.Add(new String[] {condtions[i].Grade,
+                conditionTable.Rows.Add(new String[] {condtions[i].Grade,
                                                     condtions[i].Percent.ToString()});
-                }
             }
         }
 
         private void update_Click(object sender, EventArgs e)
         {
-            
+
             ConditionInsertUpdateForm conditionInsertUpdateForm = new ConditionInsertUpdateForm(this);
             conditionInsertUpdateForm.changeEnableInsert(false);
             if (conditionTable.CurrentRow != null)

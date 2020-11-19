@@ -32,6 +32,7 @@ namespace btl_qltv_ver2.UiControl
 
         public void addDataToTable(Object obj)
         {
+
             Media media = (Media)obj;
             mediaTable.Rows.Add(new String[] {"detail",media.Isbn.ToString(),
                                                     media.Title,
@@ -43,19 +44,18 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (mediaTable.Rows.Count == 1)
+            mediaTable.Rows.Clear();
+            List<Media> medias = mediaService.getMedias();
+            for (int i = 0; i < medias.Count(); i++)
             {
-                List<Media> medias = mediaService.getMedias();
-                for (int i = 0; i < medias.Count(); i++)
-                {
-                    mediaTable.Rows.Add(new String[] {"detail",medias[i].Isbn.ToString(),
+                mediaTable.Rows.Add(new String[] {"detail",medias[i].Isbn.ToString(),
                                                     medias[i].Title,
                                                     medias[i].Year.ToString(),
                                                     medias[i].Publisher,
                                                     medias[i].Type,
                                                     medias[i].Subject });
-                }
             }
+
         }
 
         private void update_Click(object sender, EventArgs e)

@@ -52,19 +52,18 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (exchangeTable.Rows.Count == 1)
+            exchangeTable.Rows.Clear();
+            List<Exchange> exchanges = exchangeService.getExchanges();
+            for (int i = 0; i < exchanges.Count(); i++)
             {
-                List<Exchange> exchanges = exchangeService.getExchanges();
-                for (int i = 0; i < exchanges.Count(); i++)
-                {
-                    exchangeTable.Rows.Add(new String[] {"detail",
+                exchangeTable.Rows.Add(new String[] {"detail",
                                                     exchanges[i].LibraryCardNumber.ToString(),
                                                     exchanges[i].Isbn.ToString(),
                                                     exchanges[i].Grade,
                                                     exchanges[i].CheckedInDate.ToString(),
                                                     exchanges[i].Term.ToString()});
-                }
             }
+
         }
 
         private void update_Click(object sender, EventArgs e)
@@ -78,7 +77,7 @@ namespace btl_qltv_ver2.UiControl
                 String checkedInDate = exchangeTable.CurrentRow.Cells[4].Value.ToString();
                 String libraryCardNumber = exchangeTable.CurrentRow.Cells[1].Value.ToString();
                 exchangeInsertUpdateSearchForm.changeEnableGradeIsbnLibraryCardNumberTextBox(false);
-                exchangeInsertUpdateSearchForm.setData(libraryCardNumber,isbn, grade, checkedInDate);
+                exchangeInsertUpdateSearchForm.setData(libraryCardNumber, isbn, grade, checkedInDate);
             }
             exchangeInsertUpdateSearchForm.ShowDialog();
         }
@@ -87,6 +86,16 @@ namespace btl_qltv_ver2.UiControl
         {
             exchangeService.deleteExchange(exchangeTable.CurrentRow.Cells[1].Value.ToString(), Convert.ToInt32(exchangeTable.CurrentRow.Cells[2].Value.ToString()), exchangeTable.CurrentRow.Cells[3].Value.ToString());
             exchangeTable.Rows.Remove(exchangeTable.CurrentRow);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void exchangeTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

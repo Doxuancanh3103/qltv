@@ -198,6 +198,21 @@ namespace btl_qltv_ver2
 
         private void checkOutManagerButton_Click(object sender, EventArgs e)
         {
+            bunifuTransition1.AnimationType = random();
+            foreach (UserControl userControl in userControls)
+            {
+                if (userControl.Visible == true)
+                {
+                    bunifuTransition1.HideSync(userControl);
+                    break;
+                }
+            }
+            bunifuTransition1.Show(checkOutForm1);
+            checkOutForm1.loadDataToTable();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

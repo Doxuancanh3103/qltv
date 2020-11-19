@@ -33,17 +33,15 @@ namespace btl_qltv_ver2.UiControl
 
         public void loadDataToTable()
         {
-            if (patronTable.Rows.Count == 1)
+            patronTable.Rows.Clear();
+            List<Patron> patrons = patronService.getPatrons();
+            for (int i = 0; i < patrons.Count(); i++)
             {
-                List<Patron> patrons = patronService.getPatrons();
-                for (int i = 0; i < patrons.Count(); i++)
-                {
-                    patronTable.Rows.Add(new String[] {"detail",patrons[i].LibraryCardNumber,
+                patronTable.Rows.Add(new String[] {"detail",patrons[i].LibraryCardNumber,
                                                     patrons[i].Name,
                                                     patrons[i].DOB1.ToString(),
                                                     patrons[i].PhoneNumber,
                                                     patrons[i].Address });
-                }
             }
         }
 
