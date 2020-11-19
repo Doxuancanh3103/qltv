@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,14 +45,18 @@
             this.authorManagerButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.logout = new System.Windows.Forms.Button();
+            this.exchangeForm1 = new btl_qltv_ver2.UiControl.ExchangeForm();
+            this.stockForm1 = new btl_qltv_ver2.UiControl.StockForm();
+            this.policyForm1 = new btl_qltv_ver2.UiControl.PolicyForm();
+            this.conditionForm1 = new btl_qltv_ver2.UiControl.ConditionForm();
             this.authorForm1 = new btl_qltv_ver2.UiControl.AuthorForm();
             this.employeeForm1 = new btl_qltv_ver2.UiControl.EmployeeForm();
             this.patronForm1 = new btl_qltv_ver2.UiControl.PatronForm();
             this.mediaForm1 = new btl_qltv_ver2.UiControl.MediaForm();
-            this.conditionForm1 = new btl_qltv_ver2.UiControl.ConditionForm();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.logout = new System.Windows.Forms.Button();
+            this.checkOutForm1 = new btl_qltv_ver2.UiControl.CheckOutForm();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -64,22 +68,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.bunifuTransition1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 1F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 1F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation2;
             // 
             // tableLayoutPanel1
             // 
@@ -163,6 +167,7 @@
             this.policiesManagerButton.Text = "Policies";
             this.policiesManagerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.policiesManagerButton.UseVisualStyleBackColor = true;
+            this.policiesManagerButton.Click += new System.EventHandler(this.policiesManagerButton_Click);
             // 
             // mediaManagerButton
             // 
@@ -212,6 +217,7 @@
             this.stockManagerButton.Text = "Stock";
             this.stockManagerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.stockManagerButton.UseVisualStyleBackColor = true;
+            this.stockManagerButton.Click += new System.EventHandler(this.stockManagerButton_Click);
             // 
             // checkOutManagerButton
             // 
@@ -228,6 +234,7 @@
             this.checkOutManagerButton.Text = "Check Out";
             this.checkOutManagerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.checkOutManagerButton.UseVisualStyleBackColor = true;
+            this.checkOutManagerButton.Click += new System.EventHandler(this.checkOutManagerButton_Click);
             // 
             // conditionManagerButton
             // 
@@ -261,6 +268,7 @@
             this.exchangeManagerButton.Text = "Exchange";
             this.exchangeManagerButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.exchangeManagerButton.UseVisualStyleBackColor = true;
+            this.exchangeManagerButton.Click += new System.EventHandler(this.exchangeManagerButton_Click);
             // 
             // authorManagerButton
             // 
@@ -293,6 +301,10 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.checkOutForm1);
+            this.panel4.Controls.Add(this.exchangeForm1);
+            this.panel4.Controls.Add(this.stockForm1);
+            this.panel4.Controls.Add(this.policyForm1);
             this.panel4.Controls.Add(this.conditionForm1);
             this.panel4.Controls.Add(this.authorForm1);
             this.panel4.Controls.Add(this.employeeForm1);
@@ -305,45 +317,45 @@
             this.panel4.Size = new System.Drawing.Size(1112, 648);
             this.panel4.TabIndex = 1;
             // 
-            // panel2
+            // exchangeForm1
             // 
-            this.panel2.Controls.Add(this.panel3);
-            this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1112, 41);
-            this.panel2.TabIndex = 0;
+            this.bunifuTransition1.SetDecoration(this.exchangeForm1, BunifuAnimatorNS.DecorationType.None);
+            this.exchangeForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.exchangeForm1.Location = new System.Drawing.Point(0, 0);
+            this.exchangeForm1.Name = "exchangeForm1";
+            this.exchangeForm1.Size = new System.Drawing.Size(1112, 648);
+            this.exchangeForm1.TabIndex = 7;
+            this.exchangeForm1.Visible = false;
             // 
-            // panel3
+            // stockForm1
             // 
-            this.panel3.Controls.Add(this.logout);
-            this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(975, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(137, 41);
-            this.panel3.TabIndex = 1;
+            this.bunifuTransition1.SetDecoration(this.stockForm1, BunifuAnimatorNS.DecorationType.None);
+            this.stockForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stockForm1.Location = new System.Drawing.Point(0, 0);
+            this.stockForm1.Name = "stockForm1";
+            this.stockForm1.Size = new System.Drawing.Size(1112, 648);
+            this.stockForm1.TabIndex = 6;
+            this.stockForm1.Visible = false;
             // 
-            // logout
+            // policyForm1
             // 
-            this.logout.BackColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuTransition1.SetDecoration(this.logout, BunifuAnimatorNS.DecorationType.None);
-            this.logout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.Image = global::btl_qltv_ver2.Properties.Resources.logoutmini2;
-            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.logout.Location = new System.Drawing.Point(0, 0);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(137, 40);
-            this.logout.TabIndex = 0;
-            this.logout.Text = "Logout";
-            this.logout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logout.UseVisualStyleBackColor = false;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
+            this.bunifuTransition1.SetDecoration(this.policyForm1, BunifuAnimatorNS.DecorationType.None);
+            this.policyForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.policyForm1.Location = new System.Drawing.Point(0, 0);
+            this.policyForm1.Name = "policyForm1";
+            this.policyForm1.Size = new System.Drawing.Size(1112, 648);
+            this.policyForm1.TabIndex = 5;
+            this.policyForm1.Visible = false;
+            // 
+            // conditionForm1
+            // 
+            this.bunifuTransition1.SetDecoration(this.conditionForm1, BunifuAnimatorNS.DecorationType.None);
+            this.conditionForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.conditionForm1.Location = new System.Drawing.Point(0, 0);
+            this.conditionForm1.Name = "conditionForm1";
+            this.conditionForm1.Size = new System.Drawing.Size(1112, 648);
+            this.conditionForm1.TabIndex = 4;
+            this.conditionForm1.Visible = false;
             // 
             // authorForm1
             // 
@@ -388,15 +400,55 @@
             this.mediaForm1.TabIndex = 0;
             this.mediaForm1.Visible = false;
             // 
-            // conditionForm1
+            // panel2
             // 
-            this.bunifuTransition1.SetDecoration(this.conditionForm1, BunifuAnimatorNS.DecorationType.None);
-            this.conditionForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.conditionForm1.Location = new System.Drawing.Point(0, 0);
-            this.conditionForm1.Name = "conditionForm1";
-            this.conditionForm1.Size = new System.Drawing.Size(1112, 648);
-            this.conditionForm1.TabIndex = 4;
-            this.conditionForm1.Visible = false;
+            this.panel2.Controls.Add(this.panel3);
+            this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1112, 41);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.logout);
+            this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(975, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(137, 41);
+            this.panel3.TabIndex = 1;
+            // 
+            // logout
+            // 
+            this.logout.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuTransition1.SetDecoration(this.logout, BunifuAnimatorNS.DecorationType.None);
+            this.logout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Segoe Script", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Image = global::btl_qltv_ver2.Properties.Resources.logoutmini2;
+            this.logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logout.Location = new System.Drawing.Point(0, 0);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(137, 40);
+            this.logout.TabIndex = 0;
+            this.logout.Text = "Logout";
+            this.logout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.logout.UseVisualStyleBackColor = false;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
+            // checkOutForm1
+            // 
+            this.bunifuTransition1.SetDecoration(this.checkOutForm1, BunifuAnimatorNS.DecorationType.None);
+            this.checkOutForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkOutForm1.Location = new System.Drawing.Point(0, 0);
+            this.checkOutForm1.Name = "checkOutForm1";
+            this.checkOutForm1.Size = new System.Drawing.Size(1112, 648);
+            this.checkOutForm1.TabIndex = 8;
+            this.checkOutForm1.Visible = false;
             // 
             // MainForm
             // 
@@ -442,6 +494,10 @@
         private UiControl.EmployeeForm employeeForm1;
         private UiControl.AuthorForm authorForm1;
         private UiControl.ConditionForm conditionForm1;
+        private UiControl.PolicyForm policyForm1;
+        private UiControl.StockForm stockForm1;
+        private UiControl.ExchangeForm exchangeForm1;
+        private UiControl.CheckOutForm checkOutForm1;
         //private UiControl.MediaForm mediaTable;
     }
 }

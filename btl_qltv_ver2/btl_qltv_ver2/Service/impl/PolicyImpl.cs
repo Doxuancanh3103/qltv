@@ -1,4 +1,6 @@
-﻿using btl_qltv_ver2.domain;
+﻿using btl_qltv_ver2.Bean;
+using btl_qltv_ver2.domain;
+using btl_qltv_ver2.repos;
 using btl_qltv_ver2.sdi;
 using System;
 using System.Collections.Generic;
@@ -10,34 +12,40 @@ namespace btl_qltv_ver2.Service.impl
 {
     class PolicyImpl : PolicyService
     {
+        private PolicyRepoService policyRepoService;
+
+        public PolicyImpl()
+        {
+            policyRepoService = PolicyRepoServiceBean.getBean();
+        }
         public string deletePolicy(string description)
         {
-            throw new NotImplementedException();
+            return policyRepoService.deletePolicy(description);
         }
 
         public List<Policy> getPolicies()
         {
-            throw new NotImplementedException();
+            return policyRepoService.getPolicies();
         }
 
         public Policy getPolicyByDescription(string description)
         {
-            throw new NotImplementedException();
+            return policyRepoService.getPolicyByDescription(description);
         }
 
         public Policy insertPolicy(PolicyInsertSdi conditionInsertSdi)
         {
-            throw new NotImplementedException();
+            return policyRepoService.insertPolicy(conditionInsertSdi);
         }
 
         public bool isExistPolicy(string description)
         {
-            throw new NotImplementedException();
+            return policyRepoService.isExistPolicy(description);
         }
 
-        public Policy updatePolicy(PolicyInsertSdi conditionUpdateSdi)
+        public Policy updatePolicy(PolicyUpdateSdi policyUpdateSdi)
         {
-            throw new NotImplementedException();
+            return policyRepoService.updatePolicy(policyUpdateSdi);
         }
     }
 }

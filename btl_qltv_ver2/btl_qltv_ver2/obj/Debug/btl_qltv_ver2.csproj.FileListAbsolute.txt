@@ -27,3 +27,9 @@ C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.U
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.ConditionForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.ConditionInsertUpdateForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.PolicyForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.PolicyInsertUpdateForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.StockForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.StockInsertUpdateForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.ExchangeForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.ExchangeInsertUpdateSearchForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.CheckOutForm.resources

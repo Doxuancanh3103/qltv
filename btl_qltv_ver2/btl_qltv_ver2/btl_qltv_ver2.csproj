@@ -56,17 +56,26 @@
     <Compile Include="Bean\ConditionServiceBean.cs" />
     <Compile Include="Bean\EmployeeRepoServiceBean.cs" />
     <Compile Include="Bean\EmployeeServiceBean.cs" />
+    <Compile Include="Bean\ExchangeRepoServiceBean.cs" />
+    <Compile Include="Bean\ExchangeServiceBean.cs" />
     <Compile Include="Bean\MediaRepoBean.cs" />
     <Compile Include="Bean\MediaServiceBean.cs" />
     <Compile Include="Bean\PatronRepoServiceBean.cs" />
     <Compile Include="Bean\PatronServiceBean.cs" />
+    <Compile Include="Bean\PolicyRepoServiceBean.cs" />
+    <Compile Include="Bean\PolicyServiceBean.cs" />
+    <Compile Include="Bean\StockRepoServiceBean.cs" />
+    <Compile Include="Bean\StockServiceBean.cs" />
     <Compile Include="common\DateUtils.cs" />
     <Compile Include="DBConnection\SqlServerConnection.cs" />
     <Compile Include="domain\Author.cs" />
     <Compile Include="domain\Condition.cs" />
     <Compile Include="domain\Employee.cs" />
+    <Compile Include="domain\Exchange.cs" />
     <Compile Include="domain\Media.cs" />
     <Compile Include="domain\Patron.cs" />
+    <Compile Include="domain\Policy.cs" />
+    <Compile Include="domain\Stock.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,15 +93,21 @@
     <Compile Include="repos\AuthorRepoService.cs" />
     <Compile Include="repos\ConditionRepoService.cs" />
     <Compile Include="repos\EmployeeRepoService.cs" />
+    <Compile Include="repos\ExchangeRepoService.cs" />
     <Compile Include="repos\impl\AuthorRepoImpl.cs" />
     <Compile Include="repos\impl\ConditionRepoImpl.cs" />
     <Compile Include="repos\impl\EmployeeRepoImpl.cs" />
+    <Compile Include="repos\impl\ExchangeRepoImpl.cs" />
     <Compile Include="repos\impl\LoginRepoServiceImpl.cs" />
     <Compile Include="repos\impl\MediaRepoServiceImpl.cs" />
     <Compile Include="repos\impl\PatronRepoImpl.cs" />
+    <Compile Include="repos\impl\PolicyRepoImpl.cs" />
+    <Compile Include="repos\impl\StockRepoImpl.cs" />
     <Compile Include="repos\LoginRepoService.cs" />
     <Compile Include="repos\MediaRepoService.cs" />
     <Compile Include="repos\PatronRepoService.cs" />
+    <Compile Include="repos\PolicyRepoService.cs" />
+    <Compile Include="repos\StockRepoService.cs" />
     <Compile Include="sdi\AuthorInsertSdi.cs" />
     <Compile Include="sdi\AuthorSearchSdi.cs" />
     <Compile Include="sdi\AuthorUpdateSdi.cs" />
@@ -101,6 +116,8 @@
     <Compile Include="sdi\EmployeeInsertSdi.cs" />
     <Compile Include="sdi\EmployeeSearchSdi.cs" />
     <Compile Include="sdi\EmployeeUpdateSdi.cs" />
+    <Compile Include="sdi\ExchangeInsertSdi.cs" />
+    <Compile Include="sdi\ExchangeUpdateSdi.cs" />
     <Compile Include="sdi\LoginSdi.cs" />
     <Compile Include="sdi\MediaInsertSdi.cs" />
     <Compile Include="sdi\MediaSearchSdi.cs" />
@@ -108,19 +125,29 @@
     <Compile Include="sdi\PatronInsertSdi.cs" />
     <Compile Include="sdi\PatronSearchSdi.cs" />
     <Compile Include="sdi\PatronUpdateSdi.cs" />
+    <Compile Include="sdi\PolicyInsertSdi.cs" />
+    <Compile Include="sdi\PolicyUpdateSdi.cs" />
+    <Compile Include="sdi\StockInsertSdi.cs" />
+    <Compile Include="sdi\StockUpdateSdi.cs" />
     <Compile Include="sdo\MediaInsertSdo.cs" />
     <Compile Include="Service\AuthorService.cs" />
     <Compile Include="Service\ConditionService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\ExchangeService.cs" />
     <Compile Include="Service\impl\AuthorImpl.cs" />
     <Compile Include="Service\impl\ConditionImpl.cs" />
     <Compile Include="Service\impl\EmployeeImpl.cs" />
+    <Compile Include="Service\impl\ExchangeImpl.cs" />
     <Compile Include="Service\impl\LoginServiceImpl.cs" />
     <Compile Include="Service\impl\MediaImpl.cs" />
     <Compile Include="Service\impl\PatronImpl.cs" />
+    <Compile Include="Service\impl\PolicyImpl.cs" />
+    <Compile Include="Service\impl\StockImpl.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\MediaService.cs" />
     <Compile Include="Service\PatronService.cs" />
+    <Compile Include="Service\PolicyService.cs" />
+    <Compile Include="Service\StockService.cs" />
     <Compile Include="UiControl\AuthorForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +165,12 @@
     </Compile>
     <Compile Include="UiControl\AuthorSearchResult.Designer.cs">
       <DependentUpon>AuthorSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\CheckOutForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\CheckOutForm.Designer.cs">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UiControl\ConditionForm.cs">
       <SubType>UserControl</SubType>
@@ -168,6 +201,18 @@
     </Compile>
     <Compile Include="UiControl\EmployeeSearchResult.Designer.cs">
       <DependentUpon>EmployeeSearchResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\ExchangeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\ExchangeForm.Designer.cs">
+      <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\ExchangeInsertUpdateSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\ExchangeInsertUpdateSearchForm.Designer.cs">
+      <DependentUpon>ExchangeInsertUpdateSearchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UiControl\MediaForm.cs">
       <SubType>UserControl</SubType>
@@ -217,6 +262,24 @@
     <Compile Include="UiControl\PolicyForm.Designer.cs">
       <DependentUpon>PolicyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiControl\PolicyInsertUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\PolicyInsertUpdateForm.Designer.cs">
+      <DependentUpon>PolicyInsertUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\StockForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\StockInsertUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\StockInsertUpdateForm.Designer.cs">
+      <DependentUpon>StockInsertUpdateForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +305,9 @@
     <EmbeddedResource Include="UiControl\AuthorSearchResult.resx">
       <DependentUpon>AuthorSearchResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\CheckOutForm.resx">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UiControl\ConditionForm.resx">
       <DependentUpon>ConditionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\EmployeeSearchResult.resx">
       <DependentUpon>EmployeeSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\ExchangeForm.resx">
+      <DependentUpon>ExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\ExchangeInsertUpdateSearchForm.resx">
+      <DependentUpon>ExchangeInsertUpdateSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\MediaForm.resx">
       <DependentUpon>MediaForm.cs</DependentUpon>
@@ -280,6 +352,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\PolicyForm.resx">
       <DependentUpon>PolicyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\PolicyInsertUpdateForm.resx">
+      <DependentUpon>PolicyInsertUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\StockInsertUpdateForm.resx">
+      <DependentUpon>StockInsertUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

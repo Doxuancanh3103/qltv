@@ -8,5 +8,10 @@ namespace btl_qltv_ver2.domain
 {
     class Policy
     {
+        private String description;
+        private Double value;
+
+        public string Description { get => description; set => description = value; }
+        public double Value { get => value; set => this.value = value; }
     }
 }

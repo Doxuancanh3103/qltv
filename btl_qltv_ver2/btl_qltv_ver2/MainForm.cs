@@ -42,6 +42,10 @@ namespace btl_qltv_ver2
             userControls.Add(employeeForm1);
             userControls.Add(authorForm1);
             userControls.Add(conditionForm1);
+            userControls.Add(policyForm1);
+            userControls.Add(stockForm1);
+            userControls.Add(exchangeForm1);
+            userControls.Add(checkOutForm1);
         }
 
         private BunifuAnimatorNS.AnimationType random()
@@ -145,6 +149,56 @@ namespace btl_qltv_ver2
             }
             bunifuTransition1.Show(conditionForm1);
             conditionForm1.loadDataToTable();
+        }
+
+        private void policiesManagerButton_Click(object sender, EventArgs e)
+        {
+            bunifuTransition1.AnimationType = random();
+            foreach (UserControl userControl in userControls)
+            {
+                if (userControl.Visible == true)
+                {
+                    bunifuTransition1.HideSync(userControl);
+                    break;
+                }
+            }
+            bunifuTransition1.Show(policyForm1);
+            policyForm1.loadDataToTable();
+        }
+
+        private void stockManagerButton_Click(object sender, EventArgs e)
+        {
+            bunifuTransition1.AnimationType = random();
+            foreach (UserControl userControl in userControls)
+            {
+                if (userControl.Visible == true)
+                {
+                    bunifuTransition1.HideSync(userControl);
+                    break;
+                }
+            }
+            bunifuTransition1.Show(stockForm1);
+            stockForm1.loadDataToTable();
+        }
+
+        private void exchangeManagerButton_Click(object sender, EventArgs e)
+        {
+            bunifuTransition1.AnimationType = random();
+            foreach (UserControl userControl in userControls)
+            {
+                if (userControl.Visible == true)
+                {
+                    bunifuTransition1.HideSync(userControl);
+                    break;
+                }
+            }
+            bunifuTransition1.Show(exchangeForm1);
+            exchangeForm1.loadDataToTable();
+        }
+
+        private void checkOutManagerButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -77,5 +77,15 @@ namespace btl_qltv_ver2.UiControl
             conditionService.deleteCondition(conditionTable.CurrentRow.Cells[0].Value.ToString());
             conditionTable.Rows.Remove(conditionTable.CurrentRow);
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void conditionTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

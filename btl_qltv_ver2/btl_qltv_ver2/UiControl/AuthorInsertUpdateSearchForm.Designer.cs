@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.search = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.updateCustom = new System.Windows.Forms.Button();
+            this.insertCustom = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lnameTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.mnameTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -40,10 +44,6 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.authorIdTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.dobTextBox = new System.Windows.Forms.DateTimePicker();
-            this.search = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.updateCustom = new System.Windows.Forms.Button();
-            this.insertCustom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,70 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(567, 53);
             this.panel1.TabIndex = 4;
+            // 
+            // search
+            // 
+            this.search.Dock = System.Windows.Forms.DockStyle.Left;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search.Image = global::btl_qltv_ver2.Properties.Resources.search;
+            this.search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search.Location = new System.Drawing.Point(423, 0);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(142, 53);
+            this.search.TabIndex = 16;
+            this.search.Text = "Search";
+            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::btl_qltv_ver2.Properties.Resources.cancel;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(284, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 53);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Cancel";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // updateCustom
+            // 
+            this.updateCustom.Dock = System.Windows.Forms.DockStyle.Left;
+            this.updateCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateCustom.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateCustom.Image = global::btl_qltv_ver2.Properties.Resources.updateVer1;
+            this.updateCustom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.updateCustom.Location = new System.Drawing.Point(142, 0);
+            this.updateCustom.Name = "updateCustom";
+            this.updateCustom.Size = new System.Drawing.Size(142, 53);
+            this.updateCustom.TabIndex = 14;
+            this.updateCustom.Text = "Update";
+            this.updateCustom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.updateCustom.UseVisualStyleBackColor = true;
+            this.updateCustom.Click += new System.EventHandler(this.updateCustom_Click);
+            // 
+            // insertCustom
+            // 
+            this.insertCustom.Dock = System.Windows.Forms.DockStyle.Left;
+            this.insertCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.insertCustom.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insertCustom.Image = global::btl_qltv_ver2.Properties.Resources.insert;
+            this.insertCustom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.insertCustom.Location = new System.Drawing.Point(0, 0);
+            this.insertCustom.Name = "insertCustom";
+            this.insertCustom.Size = new System.Drawing.Size(142, 53);
+            this.insertCustom.TabIndex = 13;
+            this.insertCustom.Text = "Insert";
+            this.insertCustom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.insertCustom.UseVisualStyleBackColor = true;
+            this.insertCustom.Click += new System.EventHandler(this.insertCustom_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -239,70 +303,6 @@
             this.dobTextBox.Name = "dobTextBox";
             this.dobTextBox.Size = new System.Drawing.Size(561, 22);
             this.dobTextBox.TabIndex = 13;
-            // 
-            // search
-            // 
-            this.search.Dock = System.Windows.Forms.DockStyle.Left;
-            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search.Image = global::btl_qltv_ver2.Properties.Resources.search;
-            this.search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.search.Location = new System.Drawing.Point(423, 0);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(142, 53);
-            this.search.TabIndex = 16;
-            this.search.Text = "Search";
-            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.search.UseVisualStyleBackColor = true;
-            this.search.Click += new System.EventHandler(this.search_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::btl_qltv_ver2.Properties.Resources.cancel;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(284, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 53);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Cancel";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // updateCustom
-            // 
-            this.updateCustom.Dock = System.Windows.Forms.DockStyle.Left;
-            this.updateCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateCustom.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateCustom.Image = global::btl_qltv_ver2.Properties.Resources.updateVer1;
-            this.updateCustom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.updateCustom.Location = new System.Drawing.Point(142, 0);
-            this.updateCustom.Name = "updateCustom";
-            this.updateCustom.Size = new System.Drawing.Size(142, 53);
-            this.updateCustom.TabIndex = 14;
-            this.updateCustom.Text = "Update";
-            this.updateCustom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.updateCustom.UseVisualStyleBackColor = true;
-            this.updateCustom.Click += new System.EventHandler(this.updateCustom_Click);
-            // 
-            // insertCustom
-            // 
-            this.insertCustom.Dock = System.Windows.Forms.DockStyle.Left;
-            this.insertCustom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.insertCustom.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertCustom.Image = global::btl_qltv_ver2.Properties.Resources.insert;
-            this.insertCustom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.insertCustom.Location = new System.Drawing.Point(0, 0);
-            this.insertCustom.Name = "insertCustom";
-            this.insertCustom.Size = new System.Drawing.Size(142, 53);
-            this.insertCustom.TabIndex = 13;
-            this.insertCustom.Text = "Insert";
-            this.insertCustom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.insertCustom.UseVisualStyleBackColor = true;
-            this.insertCustom.Click += new System.EventHandler(this.insertCustom_Click);
             // 
             // AuthorInsertUpdateSearchForm
             // 

@@ -14,8 +14,8 @@ namespace btl_qltv_ver2.repos
         List<Policy> getPolicies();
 
         Boolean isExistPolicy(String description);
-        Policy insertPolicy(PolicyInsertSdi conditionInsertSdi);
-        Policy updatePolicy(PolicyInsertSdi conditionUpdateSdi);
+        Policy insertPolicy(PolicyInsertSdi policyInsertSdi);
+        Policy updatePolicy(PolicyUpdateSdi policyUpdateSdi);
 
         String deletePolicy(String description);
     }

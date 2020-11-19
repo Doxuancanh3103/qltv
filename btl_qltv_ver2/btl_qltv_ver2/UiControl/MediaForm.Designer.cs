@@ -83,7 +83,7 @@
             this.mediaTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.mediaTable.RowHeadersWidth = 51;
             this.mediaTable.RowTemplate.Height = 24;
-            this.mediaTable.Size = new System.Drawing.Size(1136, 541);
+            this.mediaTable.Size = new System.Drawing.Size(1136, 746);
             this.mediaTable.TabIndex = 0;
             // 
             // Column1
@@ -161,7 +161,7 @@
             this.tableLayoutPanel1.Controls.Add(this.insert, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 493);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 698);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -240,7 +240,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mediaTable);
             this.Name = "MediaForm";
-            this.Size = new System.Drawing.Size(1136, 541);
+            this.Size = new System.Drawing.Size(1136, 746);
             ((System.ComponentModel.ISupportInitialize)(this.mediaTable)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
