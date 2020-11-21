@@ -23,6 +23,13 @@ namespace btl_qltv_ver2.Service
         String deletePatron(String libraryCardNumber);
 
         List<Patron> filterPatrons(String obj, String sender);
+
+        PatronDetails getPatronDetailsById(String libraryCardNumber);
+
         Boolean isExistAccount(String username);
+
+        int sumOfMediaBorrowed(String libraryCardNumber);
+
+        int sumOfDamageMedia(String libraryCardNumber);
     }
 }

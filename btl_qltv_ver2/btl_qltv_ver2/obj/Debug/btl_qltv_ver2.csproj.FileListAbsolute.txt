@@ -7,7 +7,6 @@ C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.c
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.csproj.CoreCompileInputs.cache
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.exe
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.pdb
-C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.csprojAssemblyReference.cache
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.MainForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\Bunifu_UI_v1.52.dll
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.csproj.CopyComplete
@@ -38,3 +37,15 @@ C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.U
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.filterEmployeeForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.filterMediaForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.filterPatronForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.dll
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.pdb
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.xml
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.csprojAssemblyReference.cache
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.PatronStatistic.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.Home.resources

@@ -38,12 +38,12 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.filterTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.filterButton = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.insert = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
+            this.filterTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.filterButton = new System.Windows.Forms.Button();
             this.filterPatronForm1 = new btl_qltv_ver2.UiControl.filterPatronForm();
             ((System.ComponentModel.ISupportInitialize)(this.patronTable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -84,6 +84,7 @@
             this.patronTable.RowTemplate.Height = 24;
             this.patronTable.Size = new System.Drawing.Size(1138, 623);
             this.patronTable.TabIndex = 1;
+            this.patronTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patronTable_CellContentClick);
             // 
             // Column1
             // 
@@ -157,41 +158,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1138, 45);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // filterTextBox
-            // 
-            this.filterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.filterTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.filterTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filterTextBox.Font = new System.Drawing.Font("Segoe Script", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.filterTextBox.HintForeColor = System.Drawing.Color.Empty;
-            this.filterTextBox.HintText = "";
-            this.filterTextBox.isPassword = false;
-            this.filterTextBox.LineFocusedColor = System.Drawing.Color.DodgerBlue;
-            this.filterTextBox.LineIdleColor = System.Drawing.Color.Gray;
-            this.filterTextBox.LineMouseHoverColor = System.Drawing.Color.Orange;
-            this.filterTextBox.LineThickness = 4;
-            this.filterTextBox.Location = new System.Drawing.Point(804, 5);
-            this.filterTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.filterTextBox.Name = "filterTextBox";
-            this.filterTextBox.Size = new System.Drawing.Size(208, 35);
-            this.filterTextBox.TabIndex = 7;
-            this.filterTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.filterTextBox.OnValueChanged += new System.EventHandler(this.filterTextBox_OnValueChanged);
-            // 
-            // filterButton
-            // 
-            this.filterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.filterButton.Font = new System.Drawing.Font("Microsoft New Tai Lue", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterButton.Location = new System.Drawing.Point(1020, 3);
-            this.filterButton.Name = "filterButton";
-            this.filterButton.Size = new System.Drawing.Size(115, 39);
-            this.filterButton.TabIndex = 8;
-            this.filterButton.Text = "Filter Option";
-            this.filterButton.UseVisualStyleBackColor = true;
-            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
-            // 
             // search
             // 
             this.search.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -255,6 +221,41 @@
             this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.delete.UseVisualStyleBackColor = true;
             this.delete.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // filterTextBox
+            // 
+            this.filterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.filterTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.filterTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterTextBox.Font = new System.Drawing.Font("Segoe Script", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.filterTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.filterTextBox.HintText = "";
+            this.filterTextBox.isPassword = false;
+            this.filterTextBox.LineFocusedColor = System.Drawing.Color.DodgerBlue;
+            this.filterTextBox.LineIdleColor = System.Drawing.Color.Gray;
+            this.filterTextBox.LineMouseHoverColor = System.Drawing.Color.Orange;
+            this.filterTextBox.LineThickness = 4;
+            this.filterTextBox.Location = new System.Drawing.Point(804, 5);
+            this.filterTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.filterTextBox.Name = "filterTextBox";
+            this.filterTextBox.Size = new System.Drawing.Size(208, 35);
+            this.filterTextBox.TabIndex = 7;
+            this.filterTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.filterTextBox.OnValueChanged += new System.EventHandler(this.filterTextBox_OnValueChanged);
+            // 
+            // filterButton
+            // 
+            this.filterButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.filterButton.Font = new System.Drawing.Font("Microsoft New Tai Lue", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterButton.Location = new System.Drawing.Point(1020, 3);
+            this.filterButton.Name = "filterButton";
+            this.filterButton.Size = new System.Drawing.Size(115, 39);
+            this.filterButton.TabIndex = 8;
+            this.filterButton.Text = "Filter Option";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
             // 
             // filterPatronForm1
             // 

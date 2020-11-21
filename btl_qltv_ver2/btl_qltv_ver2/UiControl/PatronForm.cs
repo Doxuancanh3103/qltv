@@ -141,5 +141,21 @@ namespace btl_qltv_ver2.UiControl
             }
 
         }
+
+        private void patronTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                Patron patron = new Patron();
+                patron.LibraryCardNumber = patronTable.CurrentRow.Cells[1].Value.ToString();
+                patron.Name = patronTable.CurrentRow.Cells[2].Value.ToString();
+                patron.DOB1 = DateTime.Parse(patronTable.CurrentRow.Cells[3].Value.ToString());
+                patron.PhoneNumber = patronTable.CurrentRow.Cells[4].Value.ToString();
+                patron.Address = patronTable.CurrentRow.Cells[5].Value.ToString();
+                PatronStatistic patronStatistic = new PatronStatistic();
+                patronStatistic.Patron = patron;
+                patronStatistic.ShowDialog();
+            }
+        }
     }
 }

@@ -111,6 +111,60 @@ namespace btl_qltv_ver2.repos.impl
             return patron;
         }
 
+        public PatronDetails getPatronDetailsById(string libraryCardNumber)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            PatronDetails patronDetails = null;
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select " +
+              " p.libraryCardNumber, " +
+              " count(case when month(e.CheckedInDate) = 1 then 1 end) as thang1, " +
+              " count(case when month(e.CheckedInDate) = 2 then 2 end) as thang2, " +
+              " count(case when month(e.CheckedInDate) = 3 then 3 end) as thang3, " +
+              " count(case when month(e.CheckedInDate) = 4 then 4 end) as thang4, " +
+              " count(case when month(e.CheckedInDate) = 5 then 5 end) as thang5, " +
+              " count(case when month(e.CheckedInDate) = 6 then 6 end) as thang6, " +
+              " count(case when month(e.CheckedInDate) = 7 then 7 end) as thang7, " +
+              " count(case when month(e.CheckedInDate) = 8 then 8 end) as thang8, " +
+              " count(case when month(e.CheckedInDate) = 9 then 9 end) as thang9, " +
+              " count(case when month(e.CheckedInDate) = 10 then 10 end) as thang10, " +
+              " count(case when month(e.CheckedInDate) = 11 then 11 end) as thang11, " +
+              " count(case when month(e.CheckedInDate) = 12 then 12 end) as thang12 " +
+              " from Patron p inner "+ 
+              " join Exchange e on p.libraryCardNumber = e.LibraryCardNumber " +
+              " where e.LibraryCardNumber = @librarycardnumber and YEAR(e.CheckedInDate) = YEAR(GETDATE()) " +
+              " group by p.libraryCardNumber"
+              );
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("librarycardnumber", libraryCardNumber);
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                patronDetails = new PatronDetails();
+                patronDetails.LibraryCardNumber = data.GetString(0);
+                patronDetails.January = data.GetInt32(1);
+                patronDetails.February = data.GetInt32(2);
+                patronDetails.March = data.GetInt32(3);
+                patronDetails.April = data.GetInt32(4);
+                patronDetails.May = data.GetInt32(5);
+                patronDetails.June = data.GetInt32(6);
+                patronDetails.July = data.GetInt32(7);
+                patronDetails.August = data.GetInt32(8);
+                patronDetails.September = data.GetInt32(9);
+                patronDetails.October = data.GetInt32(10);
+                patronDetails.November = data.GetInt32(11);
+                patronDetails.December = data.GetInt32(12);
+            }
+            data.Close();
+            con.Close();
+            if (patronDetails != null)
+            {
+                patronDetails.LibraryCardNumber = libraryCardNumber;
+            }
+            return patronDetails;
+        }
+
         public List<Patron> getPatrons()
         {
             con = SqlServerConnection.getConnnection();
@@ -122,7 +176,7 @@ namespace btl_qltv_ver2.repos.impl
                                " DOB," +
                                "phoneNumber," +
                                "Address from Patron");
-            SqlCommand command = new SqlCommand(sql.ToString(),con);
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
             SqlDataReader data = command.ExecuteReader();
             while (data.Read())
             {
@@ -252,6 +306,47 @@ namespace btl_qltv_ver2.repos.impl
             data.Close();
             con.Close();
             return patrons;
+        }
+
+        public int sumOfDamageMedia(string libraryCardNumber)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select count(e.ISBN) as amount from Exchange e " +
+                             " inner join Check_Out c " +
+                             " on e.LibraryCardNumber = c.LibraryCardNumber and e.ISBN = c.ISBN and e.Grade = c.Grade " +
+                             " where c.CurrentCondition != e.Grade and e.LibraryCardNumber = @libraryCardNumber");
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("libraryCardNumber", libraryCardNumber);
+            int amount = 0;
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                amount = data.GetInt32(0);
+            }
+            data.Close();
+            con.Close();
+            return amount;
+        }
+
+        public int sumOfMediaBorrowed(string libraryCardNumber)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select count(ISBN) as amount from Exchange where LibraryCardNumber = @libraryCardNumber");
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("libraryCardNumber", libraryCardNumber);
+            int amount = 0;
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                amount = data.GetInt32(0);
+            }
+            data.Close();
+            con.Close();
+            return amount;
         }
 
         public Patron updatePatron(PatronUpdateSdi sdi)

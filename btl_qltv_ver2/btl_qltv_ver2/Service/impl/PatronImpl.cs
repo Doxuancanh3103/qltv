@@ -34,6 +34,11 @@ namespace btl_qltv_ver2.Service.impl
             return patronRepoService.getPatronByLibraryCardNumber(libraryCardNumber);
         }
 
+        public PatronDetails getPatronDetailsById(string libraryCardNumber)
+        {
+            return patronRepoService.getPatronDetailsById(libraryCardNumber);
+        }
+
         public List<Patron> getPatrons()
         {
             return patronRepoService.getPatrons();
@@ -57,6 +62,16 @@ namespace btl_qltv_ver2.Service.impl
         public List<Patron> searchPatrons(PatronSearchSdi patronSearchSdi)
         {
             return patronRepoService.searchPatrons(patronSearchSdi);
+        }
+
+        public int sumOfDamageMedia(string libraryCardNumber)
+        {
+            return patronRepoService.sumOfDamageMedia(libraryCardNumber);
+        }
+
+        public int sumOfMediaBorrowed(string libraryCardNumber)
+        {
+            return patronRepoService.sumOfMediaBorrowed(libraryCardNumber);
         }
 
         public Patron updatePatron(PatronUpdateSdi patronUpdateSdi)
