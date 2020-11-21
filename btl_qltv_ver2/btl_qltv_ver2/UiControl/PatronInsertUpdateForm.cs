@@ -18,11 +18,13 @@ namespace btl_qltv_ver2.UiControl
     {
         private PatronService patronService;
         private PatronForm patronForm;
+        private EmployeeService employeeService;
         public PatronInsertUpdateForm(PatronForm patronForm)
         {
             InitializeComponent();
             patronService = PatronServiceBean.getBean();
             this.patronForm = patronForm;
+            employeeService = EmployeeServiceBean.getBean();
         }
 
         private void insertCustom_Click(object sender, EventArgs e)
@@ -32,6 +34,9 @@ namespace btl_qltv_ver2.UiControl
                 MessageBox.Show("retype password does not match", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (patronService.isExistAccount(usernameTextBox.Text))
+            {
+                MessageBox.Show("username already exists", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (employeeService.isExistAccount(usernameTextBox.Text))
             {
                 MessageBox.Show("username already exists", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

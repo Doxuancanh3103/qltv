@@ -24,6 +24,16 @@ namespace btl_qltv_ver2.Service.impl
             return authorRepoService.deleteAuthor(authorId);
         }
 
+        public List<Author> filterAuthors(string firstName, string midName, string lastName)
+        {
+            return authorRepoService.filterAuthors(firstName,midName,lastName);
+        }
+
+        public List<string> filterById(string authorId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Author getAuthorById(string AuthorId)
         {
             return authorRepoService.getAuthorById(AuthorId);

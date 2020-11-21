@@ -28,6 +28,64 @@ namespace btl_qltv_ver2.repos.impl
             return isbn;
         }
 
+        public List<Media> filterMedias(string obj, string sender)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            List<Media> medias = new List<Media>();
+            StringBuilder sql = new StringBuilder();
+            Dictionary<String, Object> param = new Dictionary<String, Object>();
+            sql.Append("select isbn,title,year,publisher,type,subject from Media ");
+            sql.Append(" where 1 = 1 ");
+            if ("1".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and title like @obj");
+                param.Add("obj", obj);
+            }
+            else if ("2".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and publisher like @obj");
+                param.Add("obj", obj);
+            }
+            else if ("3".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and type like @obj");
+                param.Add("obj", obj);
+            }
+            else
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and subject like @obj");
+                param.Add("obj", obj);
+            }
+
+
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            foreach (KeyValuePair<String, Object> item in param)
+            {
+                command.Parameters.AddWithValue(item.Key, item.Value);
+            }
+            SqlDataReader data = command.ExecuteReader();
+
+            while (data.Read())
+            {
+                Media media = new Media();
+                media.Isbn = data.GetInt32(0);
+                media.Title = data.GetString(1);
+                media.Year = data.GetDateTime(2);
+                media.Publisher = data.GetString(3);
+                media.Type = data.GetString(4);
+                media.Subject = data.GetString(5);
+                medias.Add(media);
+            }
+            data.Close();
+            con.Close();
+            return medias;
+        }
+
         public Media getMediaByIsbn(int isbn)
         {
             con = SqlServerConnection.getConnnection();

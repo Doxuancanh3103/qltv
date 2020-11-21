@@ -17,6 +17,12 @@ namespace btl_qltv_ver2.Service.impl
         {
             employeeRepoService = EmployeeRepoServiceBean.getBean();
         }
+
+        public List<Employee> filterEmployees(string obj,string sender)
+        {
+            return employeeRepoService.filterEmployees(obj, sender);
+        }
+
         public Employee getEmployeeById(string employeeId)
         {
             return employeeRepoService.getEmployeeById(employeeId);

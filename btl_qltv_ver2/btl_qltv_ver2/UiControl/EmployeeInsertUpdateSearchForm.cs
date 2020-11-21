@@ -18,11 +18,13 @@ namespace btl_qltv_ver2.UiControl
     {
         EmployeeService employeeService;
         EmployeeForm employeeForm;
+        PatronService patronService;
         public EmployeeInsertUpdateSearchForm(EmployeeForm employeeForm)
         {
             InitializeComponent();
             employeeService = EmployeeServiceBean.getBean();
             this.employeeForm = employeeForm;
+            patronService = PatronServiceBean.getBean();
         }
 
         internal PatronInsertSdi EmployeeInsertSdi { get; private set; }
@@ -40,6 +42,9 @@ namespace btl_qltv_ver2.UiControl
             else if (employeeService.isExistSSN(ssnTextBox.Text))
             {
                 MessageBox.Show("ssn already exists", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (patronService.isExistAccount(usernameTextBox.Text))
+            {
+                MessageBox.Show("username already exists", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

@@ -21,6 +21,8 @@ namespace btl_qltv_ver2.Service
         List<Patron> searchPatrons(PatronSearchSdi patronSearchSdi);
 
         String deletePatron(String libraryCardNumber);
+
+        List<Patron> filterPatrons(String obj, String sender);
         Boolean isExistAccount(String username);
     }
 }

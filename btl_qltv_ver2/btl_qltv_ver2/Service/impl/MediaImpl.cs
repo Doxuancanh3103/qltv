@@ -28,6 +28,11 @@ namespace btl_qltv_ver2.Service.impl
            return mediaRepoService.deleteMedia(isbn);
         }
 
+        public List<Media> filterMedias(string obj, string sender)
+        {
+            return mediaRepoService.filterMedias(obj, sender);
+        }
+
         public List<Media> getMedias()
         {
             return mediaRepoService.getMedias();

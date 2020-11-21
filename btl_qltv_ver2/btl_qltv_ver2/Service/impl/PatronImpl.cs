@@ -24,6 +24,11 @@ namespace btl_qltv_ver2.Service.impl
             return patronRepoService.deletePatron(libraryCardNumber);
         }
 
+        public List<Patron> filterPatrons(string obj, string sender)
+        {
+            return patronRepoService.filterPatrons(obj, sender);
+        }
+
         public Patron getPatronByLibraryCardNumber(String libraryCardNumber)
         {
             return patronRepoService.getPatronByLibraryCardNumber(libraryCardNumber);

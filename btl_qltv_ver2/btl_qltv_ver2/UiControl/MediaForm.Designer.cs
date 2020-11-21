@@ -44,7 +44,10 @@
             this.search = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.insert = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.filterTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.filterButton = new System.Windows.Forms.Button();
+            this.filterMediaForm1 = new btl_qltv_ver2.UiControl.filterMediaForm();
             ((System.ComponentModel.ISupportInitialize)(this.mediaTable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -151,15 +154,17 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.7042254F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.19014F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.search, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.update, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.insert, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.delete, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.filterTextBox, 8, 0);
+            this.tableLayoutPanel1.Controls.Add(this.filterButton, 9, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 698);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -216,27 +221,71 @@
             this.insert.UseVisualStyleBackColor = true;
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
-            // button1
+            // delete
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::btl_qltv_ver2.Properties.Resources.delete;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(342, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Delete";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.Image = global::btl_qltv_ver2.Properties.Resources.delete;
+            this.delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.delete.Location = new System.Drawing.Point(342, 3);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(107, 42);
+            this.delete.TabIndex = 3;
+            this.delete.Text = "Delete";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // filterTextBox
+            // 
+            this.filterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.filterTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.filterTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterTextBox.Font = new System.Drawing.Font("Segoe Script", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.filterTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.filterTextBox.HintText = "";
+            this.filterTextBox.isPassword = false;
+            this.filterTextBox.LineFocusedColor = System.Drawing.Color.DodgerBlue;
+            this.filterTextBox.LineIdleColor = System.Drawing.Color.Gray;
+            this.filterTextBox.LineMouseHoverColor = System.Drawing.Color.Orange;
+            this.filterTextBox.LineThickness = 4;
+            this.filterTextBox.Location = new System.Drawing.Point(804, 5);
+            this.filterTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.filterTextBox.Name = "filterTextBox";
+            this.filterTextBox.Size = new System.Drawing.Size(208, 38);
+            this.filterTextBox.TabIndex = 6;
+            this.filterTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.filterTextBox.OnValueChanged += new System.EventHandler(this.filterTextBox_OnValueChanged);
+            // 
+            // filterButton
+            // 
+            this.filterButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.filterButton.Font = new System.Drawing.Font("Microsoft New Tai Lue", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterButton.Location = new System.Drawing.Point(1020, 3);
+            this.filterButton.Name = "filterButton";
+            this.filterButton.Size = new System.Drawing.Size(113, 42);
+            this.filterButton.TabIndex = 7;
+            this.filterButton.Text = "Filter Option";
+            this.filterButton.UseVisualStyleBackColor = true;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            // 
+            // filterMediaForm1
+            // 
+            this.filterMediaForm1.Location = new System.Drawing.Point(837, 352);
+            this.filterMediaForm1.Name = "filterMediaForm1";
+            this.filterMediaForm1.Size = new System.Drawing.Size(224, 325);
+            this.filterMediaForm1.TabIndex = 2;
+            this.filterMediaForm1.Visible = false;
             // 
             // MediaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.filterMediaForm1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.mediaTable);
             this.Name = "MediaForm";
@@ -262,6 +311,9 @@
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button insert;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button delete;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox filterTextBox;
+        private System.Windows.Forms.Button filterButton;
+        private filterMediaForm filterMediaForm1;
     }
 }

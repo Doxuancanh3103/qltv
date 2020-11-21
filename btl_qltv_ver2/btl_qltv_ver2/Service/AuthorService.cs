@@ -21,5 +21,9 @@ namespace btl_qltv_ver2.Service
         String deleteAuthor(String authorId);
 
         Boolean isExistAuthor(String authorId);
+
+        List<Author> filterAuthors(String firstName, String midName, String lastName);
+
+        List<String> filterById(String authorId);
     }
 }

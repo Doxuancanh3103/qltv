@@ -1,4 +1,5 @@
-﻿using System;
+﻿using btl_qltv_ver2.information;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,11 +100,6 @@ namespace btl_qltv_ver2
         {
             formLogin.Visible = true;
             formLogin.setPassword("");
-        }
-
-        private void patronForm1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -212,6 +208,95 @@ namespace btl_qltv_ver2
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+            usernameLabelInfor.Text += Information.Username;
+            if ("P".Equals(Information.Type))
+            {
+                typeLabelInfor.Text += "Patron";
+                patronManagerButton.Enabled = false;
+                checkOutManagerButton.Enabled = false;
+                exchangeManagerButton.Enabled = false;
+                employeeManagerButton.Enabled = false;
+                patronManagerButton.Enabled = false;
+                stockManagerButton.Enabled = false;
+            }else if ("E".Equals(Information.Type))
+            {
+                typeLabelInfor.Text += "Employee";
+                employeeManagerButton.Enabled = false;
+            }
+            else
+            {
+                typeLabelInfor.Text += "Librian";
+            }
+        }
+
+        private void checkOutForm1_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void exchangeForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stockForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void policyForm1_Load(object sender, EventArgs e)
+        {
+            if ("P".Equals(Information.Type))
+            {
+                policyForm1.changeEnableDelete(false);
+                policyForm1.changeEnableInsert(false);
+                policyForm1.changeEnableUpdate(false);
+            }
+            else if ("E".Equals(Information.Type))
+            {
+                policyForm1.changeEnableDelete(false);
+                policyForm1.changeEnableInsert(false);
+                policyForm1.changeEnableUpdate(false);
+            }
+        }
+
+        private void conditionForm1_Load(object sender, EventArgs e)
+        {
+            if ("P".Equals(Information.Type))
+            {
+                conditionForm1.changeEnableDelete(false);
+                conditionForm1.changeEnableInsert(false);
+                conditionForm1.changeEnableUpdate(false);
+            }
+        }
+
+        private void authorForm1_Load(object sender, EventArgs e)
+        {
+            if ("P".Equals(Information.Type))
+            {
+                authorForm1.changeEnableDelete(false);
+                authorForm1.changeEnableInsert(false);
+                authorForm1.changeEnableUpdate(false);
+            }
+        }
+
+        private void employeeForm1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void mediaForm1_Load(object sender, EventArgs e)
+        {
+            if ("P".Equals(Information.Type))
+            {
+                mediaForm1.changeEnableDelete(false);
+                mediaForm1.changeEnableInsert(false);
+                mediaForm1.changeEnableUpdate(false);
+            }
+        }
+
+        private void patronForm1_Load(object sender, EventArgs e)
         {
 
         }

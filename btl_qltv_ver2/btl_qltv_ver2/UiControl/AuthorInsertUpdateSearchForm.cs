@@ -156,5 +156,10 @@ namespace btl_qltv_ver2.UiControl
         {
             this.Close();
         }
+
+        private void authorIdTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

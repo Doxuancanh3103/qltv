@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace btl_qltv_ver2.repos.impl
 {
@@ -25,6 +26,90 @@ namespace btl_qltv_ver2.repos.impl
             command.ExecuteNonQuery();
             con.Close();
             return authorId;
+        }
+
+        public List<Author> filterAuthors(string firstName, string midName, string lastName)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            List<Author> authors = new List<Author>();
+            StringBuilder sql = new StringBuilder();
+            Dictionary<String, Object> param = new Dictionary<String, Object>();
+            sql.Append("select  AuthorId," +
+                                " CONCAT(fName,' ',mName,' ',lName) as name," +
+                               " DOB from Author");
+            sql.Append(" where 1 = 1 ");
+
+            if ((firstName == null || "".Equals(firstName)) &&
+                (lastName == null || "".Equals(lastName)) &&
+                (midName == null || "".Equals(midName)))
+            {
+                
+            }
+            else
+            {
+                sql.Append("and ( 1 = 2");
+            }
+            if ((firstName != null && !"".Equals(firstName)) )
+            {
+                firstName = "%" + firstName + "%";
+                sql.Append("or fname like @fname ");
+                param.Add("fname", firstName );
+            }
+            else
+            {
+
+            }
+
+            if (midName != null && !"".Equals(midName))
+            {
+                midName = "%" + midName + "%";
+                sql.Append(" or mName like @mname ");
+                param.Add("mname", midName);
+            }
+            if (lastName != null && !"".Equals(lastName))
+            {
+                lastName = "%" + lastName + "%";
+                sql.Append(" or lName like @lname ");
+                param.Add("lname", lastName);
+            }
+
+
+
+            if ((firstName == null || "".Equals(firstName)) &&
+                (lastName == null || "".Equals(lastName)) &&
+                (midName == null || "".Equals(midName)))
+            {
+
+            }
+            else
+            {
+                sql.Append(")");
+            }
+
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            foreach (KeyValuePair<String, Object> item in param)
+            {
+                command.Parameters.AddWithValue(item.Key, item.Value);
+            }
+            SqlDataReader data = command.ExecuteReader();
+
+            while (data.Read())
+            {
+                Author author = new Author();
+                author.AuthorId = data.GetString(0);
+                author.Name = data.GetString(1);
+                author.DOB1 = data.GetDateTime(2);
+                authors.Add(author);
+            }
+            data.Close();
+            con.Close();
+            return authors;
+        }
+
+        public List<string> filterById(string authorId)
+        {
+            return null;
         }
 
         public Author getAuthorById(string AuthorId)

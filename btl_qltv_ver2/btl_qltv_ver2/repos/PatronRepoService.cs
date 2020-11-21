@@ -20,6 +20,8 @@ namespace btl_qltv_ver2.repos
         List<Patron> searchPatrons(PatronSearchSdi patronSearchSdi);
         Boolean isExistAccount(String username);
 
+        List<Patron> filterPatrons(String obj, String sender);
+
         String deletePatron(String libraryCardNumber);
     }
 }

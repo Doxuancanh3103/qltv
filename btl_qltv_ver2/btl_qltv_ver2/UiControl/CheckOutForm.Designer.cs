@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.checkOutTable = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.insert = new System.Windows.Forms.Button();
             this.detail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.librarycardnumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,10 @@
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentcondition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordercost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.insert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.checkOutTable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,80 +85,6 @@
             this.checkOutTable.RowTemplate.Height = 24;
             this.checkOutTable.Size = new System.Drawing.Size(1123, 550);
             this.checkOutTable.TabIndex = 13;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 10;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.update, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.insert, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 550);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1123, 69);
-            this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::btl_qltv_ver2.Properties.Resources.delete;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(227, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 63);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Delete";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // update
-            // 
-            this.update.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.update.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update.Image = global::btl_qltv_ver2.Properties.Resources.updateVer1mini;
-            this.update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.update.Location = new System.Drawing.Point(115, 3);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(106, 63);
-            this.update.TabIndex = 1;
-            this.update.Text = "Update";
-            this.update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.update.UseVisualStyleBackColor = true;
-            this.update.Click += new System.EventHandler(this.update_Click);
-            // 
-            // insert
-            // 
-            this.insert.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.insert.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insert.Image = global::btl_qltv_ver2.Properties.Resources.insertmini;
-            this.insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.insert.Location = new System.Drawing.Point(3, 3);
-            this.insert.Name = "insert";
-            this.insert.Size = new System.Drawing.Size(106, 63);
-            this.insert.TabIndex = 0;
-            this.insert.Text = "Insert";
-            this.insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.insert.UseVisualStyleBackColor = true;
-            this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // detail
             // 
@@ -221,6 +147,80 @@
             this.ordercost.MinimumWidth = 6;
             this.ordercost.Name = "ordercost";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 10;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.delete, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.update, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.insert, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 550);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1123, 69);
+            this.tableLayoutPanel1.TabIndex = 14;
+            // 
+            // delete
+            // 
+            this.delete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.Image = global::btl_qltv_ver2.Properties.Resources.delete;
+            this.delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.delete.Location = new System.Drawing.Point(227, 3);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(106, 63);
+            this.delete.TabIndex = 4;
+            this.delete.Text = "Delete";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // update
+            // 
+            this.update.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.Image = global::btl_qltv_ver2.Properties.Resources.updateVer1mini;
+            this.update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.update.Location = new System.Drawing.Point(115, 3);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(106, 63);
+            this.update.TabIndex = 1;
+            this.update.Text = "Update";
+            this.update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
+            // insert
+            // 
+            this.insert.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.insert.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insert.Image = global::btl_qltv_ver2.Properties.Resources.insertmini;
+            this.insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.insert.Location = new System.Drawing.Point(3, 3);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(106, 63);
+            this.insert.TabIndex = 0;
+            this.insert.Text = "Insert";
+            this.insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.insert.UseVisualStyleBackColor = true;
+            this.insert.Click += new System.EventHandler(this.insert_Click);
+            // 
             // CheckOutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,7 +239,7 @@
 
         private Bunifu.Framework.UI.BunifuCustomDataGrid checkOutTable;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button insert;
         private System.Windows.Forms.DataGridViewLinkColumn detail;

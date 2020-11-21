@@ -121,5 +121,52 @@ namespace btl_qltv_ver2.UiControl
         {
 
         }
+
+        public void changeEnableInsert(bool change)
+        {
+            insert.Enabled = change;
+        }
+
+        public void changeEnableUpdate(bool change)
+        {
+            update.Enabled = change;
+        }
+
+        public void changeEnableDelete(bool change)
+        {
+            delete.Enabled = change;
+        }
+
+        private void filterTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+            List<Employee> employees = employeeService.filterEmployees(filterTextBox.Text, filterEmployeeForm1.selected());
+            this.loadDataToTableFilter(employees);
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            filterEmployeeForm1.Location = new Point(filterButton.Location.X - 150, tableLayoutPanel1.Location.Y - 200);
+
+            filterEmployeeForm1.Visible = true;
+        }
+
+        public void loadDataToTableFilter(Object obj)
+        {
+            employeeTable.Rows.Clear();
+
+            List<Employee> employees = (List<Employee>)obj;
+            for (int i = 0; i < employees.Count(); i++)
+            {
+                employeeTable.Rows.Add(new String[] {"detail",employees[i].EmployeeId1,
+                                                    employees[i].SSN1,
+                                                    employees[i].Name,
+                                                    employees[i].Salary.ToString(),
+                                                    employees[i].DOB1.ToString(),
+                                                    employees[i].Address,
+                                                    employees[i].PhoneNumber,
+                                                    employees[i].RoleType });
+            }
+
+        }
     }
 }

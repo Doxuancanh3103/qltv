@@ -30,18 +30,28 @@ namespace btl_qltv_ver2.UiControl
             authorInsertUpdateSearchForm.ShowDialog();
         }
 
+        public void loadDataToTableFilter(Object authors)
+        {
+            authorTable.Rows.Clear();
+            List<Author> listAuthor = (List<Author>)authors;
+            for (int i = 0; i < listAuthor.Count(); i++)
+            {
+                authorTable.Rows.Add(new String[] {listAuthor[i].AuthorId,
+                                                    listAuthor[i].Name,
+                                                    listAuthor[i].DOB1.ToString() });
+            }
+        }
         public void loadDataToTable()
         {
-            if (authorTable.Rows.Count == 1)
+            authorTable.Rows.Clear();
+            List<Author> authors = authorService.getAuthors();
+            for (int i = 0; i < authors.Count(); i++)
             {
-                List<Author> authors = authorService.getAuthors();
-                for (int i = 0; i < authors.Count(); i++)
-                {
-                    authorTable.Rows.Add(new String[] {authors[i].AuthorId,
+                authorTable.Rows.Add(new String[] {authors[i].AuthorId,
                                                     authors[i].Name,
                                                     authors[i].DOB1.ToString() });
-                }
             }
+
         }
 
         public void addDataToTable(Object obj)
@@ -100,6 +110,102 @@ namespace btl_qltv_ver2.UiControl
         private void authorTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+        public void changeEnableInsert(bool change)
+        {
+            insert.Enabled = change;
+        }
+
+        public void changeEnableUpdate(bool change)
+        {
+            update.Enabled = change;
+        }
+
+        public void changeEnableDelete(bool change)
+        {
+            delete.Enabled = change;
+        }
+
+        private void filterTextBox_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterTextBox_MouseLeave(object sender, EventArgs e)
+        {
+        }
+
+        private void filterTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+            String firstName = "";
+            String midName = "";
+            String lastName = "";
+            if (filterOptionForm1.isFirstName())
+            {
+                firstName = filterTextBox.Text;
+            }
+
+            if (filterOptionForm1.isLastName())
+            {
+                lastName = filterTextBox.Text;
+            }
+
+            if (filterOptionForm1.isMidName())
+            {
+                midName = filterTextBox.Text;
+            }
+
+            List<Author> authors = authorService.filterAuthors(firstName, midName, lastName);
+            this.loadDataToTableFilter(authors);
+        }
+
+        private void filterOptionForm1_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterOptionForm1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterTextBox_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void filterTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void filterTextBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            filterOptionForm1.Location = new Point(filterButton.Location.X - 150, tableLayoutPanel1.Location.Y - 150);
+
+            filterOptionForm1.Visible = true;
+        }
+
+        private void filterButton_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filterOptionForm1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

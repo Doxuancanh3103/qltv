@@ -27,6 +27,61 @@ namespace btl_qltv_ver2.repos.impl
             return libraryCardNumber;
         }
 
+        public List<Patron> filterPatrons(string obj, string sender)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            List<Patron> patrons = new List<Patron>();
+            StringBuilder sql = new StringBuilder();
+            Dictionary<String, Object> param = new Dictionary<String, Object>();
+            sql.Append("select libraryCardNumber," +
+                               " CONCAT(fName,' ',mName,' ',lName) as name," +
+                               " DOB," +
+                               "phoneNumber," +
+                               "Address from Patron ");
+            sql.Append(" where 1 = 1 ");
+            if ("1".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and CONCAT(fName,' ',mName,' ',lName) like @obj");
+                param.Add("obj", obj);
+            }
+            else if ("2".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and address like @obj");
+                param.Add("obj", obj);
+            }
+            else
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and phonenumber like @obj");
+                param.Add("obj", obj);
+            }
+
+
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            foreach (KeyValuePair<String, Object> item in param)
+            {
+                command.Parameters.AddWithValue(item.Key, item.Value);
+            }
+            SqlDataReader data = command.ExecuteReader();
+
+            while (data.Read())
+            {
+                Patron patron = new Patron();
+                patron.LibraryCardNumber = data.GetString(0);
+                patron.Name = data.GetString(1);
+                patron.DOB1 = data.GetDateTime(2);
+                patron.PhoneNumber = data.GetString(3);
+                patron.Address = data.GetString(4);
+                patrons.Add(patron);
+            }
+            data.Close();
+            con.Close();
+            return patrons;
+        }
+
         public Patron getPatronByLibraryCardNumber(string libraryCardNumber)
         {
             con = SqlServerConnection.getConnnection();

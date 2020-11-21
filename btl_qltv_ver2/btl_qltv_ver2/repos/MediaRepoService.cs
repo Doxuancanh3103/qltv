@@ -20,6 +20,7 @@ namespace btl_qltv_ver2.repos
 
         List<Media> searchMedia(MediaSearchSdi mediaSearchSdi);
 
+        List<Media> filterMedias(String obj, String sender);
         int deleteMedia(int isbn);
     }
 }

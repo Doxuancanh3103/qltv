@@ -98,5 +98,50 @@ namespace btl_qltv_ver2.UiControl
             mediaService.deleteMedia(Convert.ToInt32(mediaTable.CurrentRow.Cells[1].Value.ToString()));
             mediaTable.Rows.Remove(mediaTable.CurrentRow);
         }
+
+        public void changeEnableInsert(bool change)
+        {
+            insert.Enabled = change;
+        }
+
+        public void changeEnableUpdate(bool change)
+        {
+            update.Enabled = change;
+        }
+
+        public void changeEnableDelete(bool change)
+        {
+            delete.Enabled = change;
+        }
+
+        private void filterTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+            List<Media> medias = mediaService.filterMedias(filterTextBox.Text, filterMediaForm1.selected());
+            this.loadDataToTableFilter(medias);
+        }
+
+        public void loadDataToTableFilter(Object obj)
+        {
+            mediaTable.Rows.Clear();
+
+            List<Media> medias = (List<Media>)obj;
+            for (int i = 0; i < medias.Count(); i++)
+            {
+                mediaTable.Rows.Add(new String[] {"detail",medias[i].Isbn.ToString(),
+                                                    medias[i].Title,
+                                                    medias[i].Year.ToString(),
+                                                    medias[i].Publisher,
+                                                    medias[i].Type,
+                                                    medias[i].Subject });
+            }
+
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            filterMediaForm1.Location = new Point(filterButton.Location.X - 150, tableLayoutPanel1.Location.Y - 250);
+
+            filterMediaForm1.Visible = true;
+        }
     }
 }

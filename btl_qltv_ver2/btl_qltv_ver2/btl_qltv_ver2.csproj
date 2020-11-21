@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,7 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="information\Information.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +231,30 @@
     <Compile Include="UiControl\ExchangeInsertUpdateSearchForm.Designer.cs">
       <DependentUpon>ExchangeInsertUpdateSearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UiControl\filterEmployeeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\filterEmployeeForm.Designer.cs">
+      <DependentUpon>filterEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\filterMediaForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\filterMediaForm.Designer.cs">
+      <DependentUpon>filterMediaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\filterOptionForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\filterOptionForm.Designer.cs">
+      <DependentUpon>filterOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\filterPatronForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UiControl\filterPatronForm.Designer.cs">
+      <DependentUpon>filterPatronForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UiControl\MediaForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -346,6 +372,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\ExchangeInsertUpdateSearchForm.resx">
       <DependentUpon>ExchangeInsertUpdateSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\filterEmployeeForm.resx">
+      <DependentUpon>filterEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\filterMediaForm.resx">
+      <DependentUpon>filterMediaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\filterOptionForm.resx">
+      <DependentUpon>filterOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\filterPatronForm.resx">
+      <DependentUpon>filterPatronForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\MediaForm.resx">
       <DependentUpon>MediaForm.cs</DependentUpon>

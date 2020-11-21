@@ -98,5 +98,48 @@ namespace btl_qltv_ver2.UiControl
             patronService.deletePatron(patronTable.CurrentRow.Cells[1].Value.ToString());
             patronTable.Rows.Remove(patronTable.CurrentRow);
         }
+
+        public void changeEnableInsert(bool change)
+        {
+            insert.Enabled = change;
+        }
+
+        public void changeEnableUpdate(bool change)
+        {
+            update.Enabled = change;
+        }
+
+        public void changeEnableDelete(bool change)
+        {
+            delete.Enabled = change;
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            filterPatronForm1.Location = new Point(filterButton.Location.X - 150, tableLayoutPanel1.Location.Y - 200);
+
+            filterPatronForm1.Visible = true;
+        }
+
+        private void filterTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+            List<Patron> patrons = patronService.filterPatrons(filterTextBox.Text, filterPatronForm1.selected());
+            this.loadDataToTableFilter(patrons);
+        }
+
+        public void loadDataToTableFilter(Object obj)
+        {
+            patronTable.Rows.Clear();
+            List<Patron> patrons = (List<Patron>)obj;
+            for (int i = 0; i < patrons.Count(); i++)
+            {
+                patronTable.Rows.Add(new String[] {"detail",patrons[i].LibraryCardNumber,
+                                                    patrons[i].Name,
+                                                    patrons[i].DOB1.ToString(),
+                                                    patrons[i].PhoneNumber,
+                                                    patrons[i].Address });
+            }
+
+        }
     }
 }

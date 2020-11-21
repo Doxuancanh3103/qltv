@@ -85,5 +85,20 @@ namespace btl_qltv_ver2.UiControl
         {
 
         }
+
+        public void changeEnableInsert(bool change)
+        {
+            insert.Enabled = change;
+        }
+
+        public void changeEnableUpdate(bool change)
+        {
+            update.Enabled = change;
+        }
+
+        public void changeEnableDelete(bool change)
+        {
+            delete.Enabled = change;
+        }
     }
 }

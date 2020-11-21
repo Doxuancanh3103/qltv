@@ -1,4 +1,5 @@
 ﻿using btl_qltv_ver2.DBConnection;
+using btl_qltv_ver2.information;
 using btl_qltv_ver2.sdi;
 using btl_qltv_ver2.Service;
 using btl_qltv_ver2.Service.impl;
@@ -43,16 +44,29 @@ namespace btl_qltv_ver2
             }
             else if(check == 0)
             {
-                MessageBox.Show("Patron", "Error", MessageBoxButtons.OK);
-            }else if (check == 1)
+                this.Visible = false;
+                mainForm = new MainForm();
+                Information.Username = username.Text.Trim();
+                Information.Type = "P";
+                mainForm.FormLogin = this;
+                mainForm.Show();
+            }
+            else if (check == 1)
             {
-                MessageBox.Show("Employee", "Error", MessageBoxButtons.OK);
+                this.Visible = false;
+                Information.Username = username.Text.Trim();
+                Information.Type = "E";
+                mainForm = new MainForm();
+                mainForm.FormLogin = this;
+                mainForm.Show();
             }
             else
             {
                 this.Visible = false;
                 mainForm = new MainForm();
                 mainForm.FormLogin = this;
+                Information.Username = username.Text.Trim();
+                Information.Type = "L";
                 mainForm.Show();
             }
         }

@@ -93,5 +93,20 @@ namespace btl_qltv_ver2.UiControl
             checkOutService.deleteCheckOut(checkOutTable.CurrentRow.Cells[1].Value.ToString(), Convert.ToInt32(checkOutTable.CurrentRow.Cells[2].Value.ToString()), checkOutTable.CurrentRow.Cells[3].Value.ToString());
             checkOutTable.Rows.Remove(checkOutTable.CurrentRow);
         }
+
+        public void changeEnableInsert(bool change)
+        {
+            insert.Enabled = change;
+        }
+
+        public void changeEnableUpdate(bool change)
+        {
+            update.Enabled = change;
+        }
+
+        public void changeEnableDelete(bool change)
+        {
+            delete.Enabled = change;
+        }
     }
 }

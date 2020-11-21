@@ -21,5 +21,7 @@ namespace btl_qltv_ver2.Service
         List<Employee> searchEmployees(EmployeeSearchSdi employeeSearchSdi);
 
         String deleteEmployee(String employeeid);
+
+        List<Employee> filterEmployees(String obj,String sender);
     }
 }

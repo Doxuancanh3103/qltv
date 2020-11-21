@@ -19,5 +19,7 @@ namespace btl_qltv_ver2.Service
         List<Media> SearchMedia(MediaSearchSdi mediaSearchSdi);
 
         int deleteMedia(int isbn);
+
+        List<Media> filterMedias(String obj, String sender);
     }
 }

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace btl_qltv_ver2.repos.impl
 {
@@ -25,6 +26,65 @@ namespace btl_qltv_ver2.repos.impl
             command.ExecuteNonQuery();
             con.Close();
             return employeeid;
+        }
+
+        public List<Employee> filterEmployees(string obj,string sender)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            List<Employee> employees = new List<Employee>();
+            StringBuilder sql = new StringBuilder();
+            Dictionary<String, Object> param = new Dictionary<String, Object>();
+            sql.Append("select  ssn," +
+                                 " CONCAT(fName,' ',mName,' ',lName) as name," +
+                                " DOB," +
+                                " salary," +
+                                " roletype," +
+                                " phoneNumber," +
+                                " Address from Employee ");
+            sql.Append(" where 1 = 1 ");
+            if ("1".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and CONCAT(fName,' ',mName,' ',lName) like @obj");
+                param.Add("obj", obj);
+            }
+            else if ("2".Equals(sender))
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and address like @obj");
+                param.Add("obj", obj);
+            }
+            else
+            {
+                obj = "%" + obj + "%";
+                sql.Append(" and phonenumber like @obj");
+                param.Add("obj", obj);
+            }
+
+
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            foreach (KeyValuePair<String, Object> item in param)
+            {
+                command.Parameters.AddWithValue(item.Key, item.Value);
+            }
+            SqlDataReader data = command.ExecuteReader();
+
+            while (data.Read())
+            {
+                Employee employee = new Employee();
+                employee.SSN1 = data.GetString(0);
+                employee.Name = data.GetString(1);
+                employee.DOB1 = data.GetDateTime(2);
+                employee.Salary = data.GetSqlMoney(3).ToDouble();
+                employee.RoleType = data.GetString(4);
+                employee.PhoneNumber = data.GetString(5);
+                employee.Address = data.GetString(6);
+                employees.Add(employee);
+            }
+            data.Close();
+            con.Close();
+            return employees;
         }
 
         public Employee getEmployeeById(string employeeId)
@@ -130,6 +190,8 @@ namespace btl_qltv_ver2.repos.impl
             SqlCommand command = new SqlCommand(sql.ToString(), con);
             command.Parameters.AddWithValue("username", username);
             SqlDataReader data = command.ExecuteReader();
+
+            StringBuilder sql1 = new StringBuilder();
             if (data.HasRows)
             {
                 return true;

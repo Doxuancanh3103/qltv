@@ -294,6 +294,7 @@
             this.authorIdTextBox.Size = new System.Drawing.Size(557, 41);
             this.authorIdTextBox.TabIndex = 9;
             this.authorIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.authorIdTextBox.OnValueChanged += new System.EventHandler(this.authorIdTextBox_OnValueChanged);
             // 
             // dobTextBox
             // 
