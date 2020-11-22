@@ -49,5 +49,6 @@ C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\bin\Debug\LiveCharts.Wpf.
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.csprojAssemblyReference.cache
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.PatronStatistic.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.Home.resources
-C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.ExchageStatistic.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.ExchangeDetailsForm.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.ExchangeStatistic.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.CheckOutStatistic.resources

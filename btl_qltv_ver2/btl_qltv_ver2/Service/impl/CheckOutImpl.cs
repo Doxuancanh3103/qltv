@@ -35,6 +35,11 @@ namespace btl_qltv_ver2.Service.impl
             return checkOutRepoService.getCheckOutByKey(libraryCardNumber, isbn, grade);
         }
 
+        public CheckOutStatisticDomain getCheckOutDetailsFee(int year)
+        {
+            return checkOutRepoService.getCheckOutDetailsFee(year);
+        }
+
         public List<CheckOut> getCheckOuts()
         {
             return checkOutRepoService.getCheckOuts();

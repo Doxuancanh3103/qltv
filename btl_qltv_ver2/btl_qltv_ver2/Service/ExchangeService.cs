@@ -26,5 +26,6 @@ namespace btl_qltv_ver2.Service
         Boolean isExistLibraryCardNumberInPatron(String libraryCardNumber);
         Boolean isExistISBNInMedia(int isbn);
         Boolean isExistGradeInCondition(String grade);
+        ExchangeStatisticDomain getExchangeDetails();
     }
 }

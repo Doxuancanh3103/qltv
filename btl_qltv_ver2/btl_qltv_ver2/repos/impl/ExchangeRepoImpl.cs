@@ -60,6 +60,51 @@ namespace btl_qltv_ver2.repos.impl
             return exchange;
         }
 
+        public ExchangeStatisticDomain getExchangeDetails()
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            ExchangeStatisticDomain exchangeStatisticDomain = null;
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select" +
+              " count(case when month(e.CheckedInDate) = 1 then 1 end) as thang1, " +
+              " count(case when month(e.CheckedInDate) = 2 then 2 end) as thang2, " +
+              " count(case when month(e.CheckedInDate) = 3 then 3 end) as thang3, " +
+              " count(case when month(e.CheckedInDate) = 4 then 4 end) as thang4, " +
+              " count(case when month(e.CheckedInDate) = 5 then 5 end) as thang5, " +
+              " count(case when month(e.CheckedInDate) = 6 then 6 end) as thang6, " +
+              " count(case when month(e.CheckedInDate) = 7 then 7 end) as thang7, " +
+              " count(case when month(e.CheckedInDate) = 8 then 8 end) as thang8, " +
+              " count(case when month(e.CheckedInDate) = 9 then 9 end) as thang9, " +
+              " count(case when month(e.CheckedInDate) = 10 then 10 end) as thang10, " +
+              " count(case when month(e.CheckedInDate) = 11 then 11 end) as thang11, " +
+              " count(case when month(e.CheckedInDate) = 12 then 12 end) as thang12 " +
+              " from Exchange e " +
+              " where YEAR(e.CheckedInDate) = YEAR(GETDATE()) "
+              );
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                exchangeStatisticDomain = new ExchangeStatisticDomain();
+                exchangeStatisticDomain.January = data.GetInt32(0);
+                exchangeStatisticDomain.February = data.GetInt32(1);
+                exchangeStatisticDomain.March = data.GetInt32(2);
+                exchangeStatisticDomain.April = data.GetInt32(3);
+                exchangeStatisticDomain.May = data.GetInt32(4);
+                exchangeStatisticDomain.June = data.GetInt32(5);
+                exchangeStatisticDomain.July = data.GetInt32(6);
+                exchangeStatisticDomain.August = data.GetInt32(7);
+                exchangeStatisticDomain.September = data.GetInt32(8);
+                exchangeStatisticDomain.October = data.GetInt32(9);
+                exchangeStatisticDomain.November = data.GetInt32(10);
+                exchangeStatisticDomain.December = data.GetInt32(11);
+            }
+            data.Close();
+            con.Close();
+            return exchangeStatisticDomain;
+        }
+
         public List<Exchange> getExchanges()
         {
             con = SqlServerConnection.getConnnection();

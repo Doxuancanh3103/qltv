@@ -108,5 +108,11 @@ namespace btl_qltv_ver2.UiControl
         {
             delete.Enabled = change;
         }
+
+        private void statistic_Click(object sender, EventArgs e)
+        {
+            CheckOutStatistic checkOutStatistic = new CheckOutStatistic();
+            checkOutStatistic.ShowDialog();
+        }
     }
 }

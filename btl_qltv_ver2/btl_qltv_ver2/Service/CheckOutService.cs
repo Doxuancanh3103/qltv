@@ -26,5 +26,7 @@ namespace btl_qltv_ver2.Service
         Boolean isExistISBNInMedia(int isbn);
         Boolean isExistGradeInCondition(String grade);
         Boolean isExistEmplIdInEmployee(String imployeeId);
+
+        CheckOutStatisticDomain getCheckOutDetailsFee(int year);
     }
 }

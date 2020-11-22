@@ -21,5 +21,7 @@ namespace btl_qltv_ver2.repos
         String deleteCheckOut(String libraryCardNumber, int isbn, String grade);
 
         Boolean isExistCheckOut(String libraryCardNumber, int isbn, String grade);
+
+        CheckOutStatisticDomain getCheckOutDetailsFee(int year);
     }
 }

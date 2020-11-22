@@ -87,19 +87,21 @@
     <Compile Include="DBConnection\SqlServerConnection.cs" />
     <Compile Include="domain\Author.cs" />
     <Compile Include="domain\CheckOut.cs" />
+    <Compile Include="domain\CheckOutStatisticDomain.cs" />
     <Compile Include="domain\Condition.cs" />
     <Compile Include="domain\Employee.cs" />
     <Compile Include="domain\Exchange.cs" />
+    <Compile Include="domain\ExchangeStatisticDomain.cs" />
     <Compile Include="domain\Media.cs" />
     <Compile Include="domain\Patron.cs" />
     <Compile Include="domain\PatronDetails.cs" />
     <Compile Include="domain\Policy.cs" />
     <Compile Include="domain\Stock.cs" />
-    <Compile Include="ExchageStatistic.cs">
+    <Compile Include="ExchangeStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExchageStatistic.Designer.cs">
-      <DependentUpon>ExchageStatistic.cs</DependentUpon>
+    <Compile Include="ExchangeStatistic.Designer.cs">
+      <DependentUpon>ExchangeStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="ExchangeDetailsForm.cs">
       <SubType>Form</SubType>
@@ -227,6 +229,12 @@
     </Compile>
     <Compile Include="UiControl\CheckOutInsertUpdateForm.Designer.cs">
       <DependentUpon>CheckOutInsertUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UiControl\CheckOutStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UiControl\CheckOutStatistic.Designer.cs">
+      <DependentUpon>CheckOutStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="UiControl\ConditionForm.cs">
       <SubType>UserControl</SubType>
@@ -360,8 +368,8 @@
     <Compile Include="UiControl\StockInsertUpdateForm.Designer.cs">
       <DependentUpon>StockInsertUpdateForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ExchageStatistic.resx">
-      <DependentUpon>ExchageStatistic.cs</DependentUpon>
+    <EmbeddedResource Include="ExchangeStatistic.resx">
+      <DependentUpon>ExchangeStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExchangeDetailsForm.resx">
       <DependentUpon>ExchangeDetailsForm.cs</DependentUpon>
@@ -402,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\CheckOutInsertUpdateForm.resx">
       <DependentUpon>CheckOutInsertUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UiControl\CheckOutStatistic.resx">
+      <DependentUpon>CheckOutStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\ConditionForm.resx">
       <DependentUpon>ConditionForm.cs</DependentUpon>
@@ -599,6 +610,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

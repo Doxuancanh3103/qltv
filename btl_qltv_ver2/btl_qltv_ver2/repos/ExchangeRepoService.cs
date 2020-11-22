@@ -23,5 +23,7 @@ namespace btl_qltv_ver2.repos
         Boolean isExistExchange(String libraryCardNumber, int isbn, String grade);
 
         Boolean isPaid(String libraryCardNumber, int isbn, String grade);
+
+        ExchangeStatisticDomain getExchangeDetails();
     }
 }

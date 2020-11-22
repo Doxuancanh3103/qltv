@@ -38,6 +38,11 @@ namespace btl_qltv_ver2.Service.impl
             return exchangeRepoService.getExchanges();
         }
 
+        public ExchangeStatisticDomain getExchangeDetails()
+        {
+            return exchangeRepoService.getExchangeDetails();
+        }
+
         public Exchange insertExchange(ExchangeInsertSdi exchangeInsertSdi)
         {
             return exchangeRepoService.insertExchange(exchangeInsertSdi);

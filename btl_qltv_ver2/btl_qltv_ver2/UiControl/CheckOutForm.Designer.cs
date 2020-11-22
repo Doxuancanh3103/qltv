@@ -43,6 +43,7 @@
             this.delete = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.insert = new System.Windows.Forms.Button();
+            this.statistic = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.checkOutTable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -158,13 +159,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.123775F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.08994F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.delete, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.update, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.insert, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.statistic, 9, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 550);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -221,6 +223,22 @@
             this.insert.UseVisualStyleBackColor = true;
             this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
+            // statistic
+            // 
+            this.statistic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statistic.Font = new System.Drawing.Font("Segoe Script", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statistic.Image = global::btl_qltv_ver2.Properties.Resources.analytics;
+            this.statistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statistic.Location = new System.Drawing.Point(978, 3);
+            this.statistic.Name = "statistic";
+            this.statistic.Size = new System.Drawing.Size(142, 63);
+            this.statistic.TabIndex = 6;
+            this.statistic.Text = "Statistic";
+            this.statistic.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.statistic.UseVisualStyleBackColor = true;
+            this.statistic.Click += new System.EventHandler(this.statistic_Click);
+            // 
             // CheckOutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -250,5 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn currentcondition;
         private System.Windows.Forms.DataGridViewTextBoxColumn ordercost;
+        private System.Windows.Forms.Button statistic;
     }
 }

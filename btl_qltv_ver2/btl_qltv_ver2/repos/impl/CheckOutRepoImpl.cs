@@ -62,6 +62,100 @@ namespace btl_qltv_ver2.repos.impl
             return checkOut;
         }
 
+        public CheckOutStatisticDomain getCheckOutDetailsFee(int year)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            CheckOutStatisticDomain checkOutStatisticDomain = null;
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select" + 
+              " ( " +
+			  " case when 1 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 1 then isnull(c.fee, 0) end), 0) " +
+
+              " else -1 end " +
+			  " ) as thang1, " +
+			  " ( " +
+			  " case when 2 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 2 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " + 
+			  " ) as thang2, " +
+			  " ( " +
+			  " case when 3 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 3 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang3, " +
+			  " ( " +
+			  " case when 4 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 4 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang4, "+
+			  " ( " +
+			  " case when 5 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 5 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang5, " +
+			  " ( " +
+			  " case when 6 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 6 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang6, " +
+			  " ( " +
+			  " case when 7 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 7 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang7, " +
+			  " ( " +
+			  " case when 8 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 8 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang8, " +
+			  " ( " +
+			  " case when 9 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 9 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang9, "+
+			  " ( " +
+			  " case when 10 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 10 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang10, " +
+			  " ( " +
+			  " case when 11 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 11 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang11, " +
+			  " ( " +
+			  " case when 12 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 12 then isnull(c.fee,0) end),0) " +
+
+              " else -1 end " +
+			  " ) as thang12 " +
+              " from Check_Out c " +
+              " where YEAR(c.CheckOutDate) = @year "
+              );
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("year", year);
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                checkOutStatisticDomain = new CheckOutStatisticDomain();
+                checkOutStatisticDomain.January = data.GetSqlMoney(0).ToDouble();
+                checkOutStatisticDomain.February = data.GetSqlMoney(1).ToDouble();
+                checkOutStatisticDomain.March = data.GetSqlMoney(2).ToDouble();
+                checkOutStatisticDomain.April = data.GetSqlMoney(3).ToDouble();
+                checkOutStatisticDomain.May = data.GetSqlMoney(4).ToDouble();
+                checkOutStatisticDomain.June = data.GetSqlMoney(5).ToDouble();
+                checkOutStatisticDomain.July = data.GetSqlMoney(6).ToDouble();
+                checkOutStatisticDomain.August = data.GetSqlMoney(7).ToDouble();
+                checkOutStatisticDomain.September = data.GetSqlMoney(8).ToDouble();
+                checkOutStatisticDomain.October = data.GetSqlMoney(9).ToDouble();
+                checkOutStatisticDomain.November = data.GetSqlMoney(10).ToDouble();
+                checkOutStatisticDomain.December = data.GetSqlMoney(11).ToDouble();
+            }
+            data.Close();
+            con.Close();
+            return checkOutStatisticDomain;
+        }
+
         public List<CheckOut> getCheckOuts()
         {
             con = SqlServerConnection.getConnnection();
