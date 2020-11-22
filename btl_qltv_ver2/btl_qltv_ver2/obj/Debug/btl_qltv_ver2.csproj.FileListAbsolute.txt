@@ -52,3 +52,4 @@ C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.H
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.ExchangeDetailsForm.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.ExchangeStatistic.resources
 C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.CheckOutStatistic.resources
+C:\Users\Canh\source\repos\btl_qltv_ver2\btl_qltv_ver2\obj\Debug\btl_qltv_ver2.UiControl.CheckOutDetailsForm.resources

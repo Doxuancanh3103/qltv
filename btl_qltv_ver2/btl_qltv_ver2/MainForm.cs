@@ -47,6 +47,7 @@ namespace btl_qltv_ver2
             userControls.Add(stockForm1);
             userControls.Add(exchangeForm1);
             userControls.Add(checkOutForm1);
+            userControls.Add(home1);
         }
 
         private BunifuAnimatorNS.AnimationType random()
@@ -299,6 +300,21 @@ namespace btl_qltv_ver2
         private void patronForm1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void home_Click(object sender, EventArgs e)
+        {
+            bunifuTransition1.AnimationType = random();
+            foreach (UserControl userControl in userControls)
+            {
+                if (userControl.Visible == true)
+                {
+                    bunifuTransition1.HideSync(userControl);
+                    break;
+                }
+            }
+            bunifuTransition1.Show(home1);
+            checkOutForm1.loadDataToTable();
         }
     }
 }

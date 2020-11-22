@@ -182,6 +182,75 @@ namespace btl_qltv_ver2.repos.impl
             return checkOuts;
         }
 
+        public double getDeposit()
+        {
+            double deposit = 0;
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select value from Policies where Description = 'deposit'") ;
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                deposit = data.GetSqlDecimal(0).ToDouble();
+            }
+            data.Close();
+            con.Close();
+            return deposit;
+        }
+
+        public double getFeeDefault(int isbn, string grade)
+        {
+            double feeDefault = 0;
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select ordercost from Stock where ISBN = @isbn and Grade = @grade");
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("isbn", isbn);
+            command.Parameters.AddWithValue("grade", grade);
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                feeDefault = data.GetSqlMoney(0).ToDouble();
+            }
+            data.Close();
+            con.Close();
+            return feeDefault;
+        }
+
+        public double getFine(string libraryCardNumber, int isbn, string grade)
+        {
+            double fine = 0;
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("declare @feeperday money,@maxlength int " +
+                       " select @feeperday = Value from Policies where Description = 'FeePerDay' " +
+                        " select " +
+                        " ( " +
+                        " case when DATEDIFF(day, e.Term, c.CheckOutDate) > 0 then @feeperday * DATEDIFF(day, e.Term, c.CheckOutDate) end " +
+                        " ) as tienphat " +
+                        " from Check_Out c inner " +
+                        " join Exchange e " +
+                        " on c.LibraryCardNumber = e.LibraryCardNumber and c.ISBN = e.ISBN and c.Grade = e.Grade " +
+                        " where c.LibraryCardNumber = @librarycardnumber and c.ISBN = @isbn and c.Grade = @grade"
+                        );
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("isbn", isbn);
+            command.Parameters.AddWithValue("grade", grade);
+            command.Parameters.AddWithValue("librarycardnumber", libraryCardNumber);
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                fine = data.GetSqlMoney(0).ToDouble();
+            }
+            data.Close();
+            con.Close();
+            return fine;
+        }
+
         public CheckOut insertCheckOut(CheckOutInsertSdi checkOutInsertSdi)
         {
             con = SqlServerConnection.getConnnection();

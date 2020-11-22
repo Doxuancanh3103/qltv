@@ -45,6 +45,21 @@ namespace btl_qltv_ver2.Service.impl
             return checkOutRepoService.getCheckOuts();
         }
 
+        public double getDeposit()
+        {
+            return checkOutRepoService.getDeposit();
+        }
+
+        public double getFeeDefault(int isbn, string grade)
+        {
+            return checkOutRepoService.getFeeDefault(isbn, grade);
+        }
+
+        public double getFine(string libraryCardNumber, int isbn, string grade)
+        {
+            return checkOutRepoService.getFine(libraryCardNumber, isbn, grade);
+        }
+
         public CheckOut insertCheckOut(CheckOutInsertSdi checkOutInsertSdi)
         {
             return checkOutRepoService.insertCheckOut(checkOutInsertSdi);

@@ -86,6 +86,7 @@
             this.checkOutTable.RowTemplate.Height = 24;
             this.checkOutTable.Size = new System.Drawing.Size(1123, 550);
             this.checkOutTable.TabIndex = 13;
+            this.checkOutTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.checkOutTable_CellContentClick);
             // 
             // detail
             // 

@@ -23,5 +23,10 @@ namespace btl_qltv_ver2.repos
         Boolean isExistCheckOut(String libraryCardNumber, int isbn, String grade);
 
         CheckOutStatisticDomain getCheckOutDetailsFee(int year);
+
+        double getFine(String libraryCardNumber, int isbn, String grade);
+        double getDeposit();
+
+        double getFeeDefault(int isbn, String grade);
     }
 }

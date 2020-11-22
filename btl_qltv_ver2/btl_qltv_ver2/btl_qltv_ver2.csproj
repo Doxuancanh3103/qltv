@@ -218,6 +218,12 @@
     <Compile Include="UiControl\AuthorSearchResult.Designer.cs">
       <DependentUpon>AuthorSearchResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckOutDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckOutDetailsForm.Designer.cs">
+      <DependentUpon>CheckOutDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UiControl\CheckOutForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -404,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\AuthorSearchResult.resx">
       <DependentUpon>AuthorSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckOutDetailsForm.resx">
+      <DependentUpon>CheckOutDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UiControl\CheckOutForm.resx">
       <DependentUpon>CheckOutForm.cs</DependentUpon>
@@ -613,6 +622,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\analytics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroudtitle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroudtitle1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

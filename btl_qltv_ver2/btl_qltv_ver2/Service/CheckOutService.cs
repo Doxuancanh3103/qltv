@@ -28,5 +28,9 @@ namespace btl_qltv_ver2.Service
         Boolean isExistEmplIdInEmployee(String imployeeId);
 
         CheckOutStatisticDomain getCheckOutDetailsFee(int year);
+
+        double getFine(String libraryCardNumber, int isbn, String grade);
+        double getDeposit();
+        double getFeeDefault(int isbn, String grade);
     }
 }

@@ -114,5 +114,23 @@ namespace btl_qltv_ver2.UiControl
             CheckOutStatistic checkOutStatistic = new CheckOutStatistic();
             checkOutStatistic.ShowDialog();
         }
+
+        private void checkOutTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                CheckOut checkOut = new CheckOut();
+                checkOut.LibraryCardNumber = checkOutTable.CurrentRow.Cells[1].Value.ToString();
+                checkOut.Isbn = Convert.ToInt32(checkOutTable.CurrentRow.Cells[2].Value.ToString());
+                checkOut.Grade = checkOutTable.CurrentRow.Cells[3].Value.ToString();
+                checkOut.Checker = checkOutTable.CurrentRow.Cells[4].Value.ToString();
+                checkOut.CheckOutDate = DateTime.Parse(checkOutTable.CurrentRow.Cells[5].Value.ToString());
+                checkOut.CurrentCondition = checkOutTable.CurrentRow.Cells[6].Value.ToString();
+                checkOut.Fee = Convert.ToDouble(checkOutTable.CurrentRow.Cells[7].Value.ToString());
+                CheckOutDetailsForm checkOutDetailsForm = new CheckOutDetailsForm();
+                checkOutDetailsForm.CheckedOut = checkOut;
+                checkOutDetailsForm.ShowDialog();
+            }
+        }
     }
 }
