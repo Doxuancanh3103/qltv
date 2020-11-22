@@ -95,7 +95,19 @@ namespace btl_qltv_ver2.UiControl
 
         private void exchangeTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == 0)
+            {
+                Exchange exchange = new Exchange();
+                exchange.LibraryCardNumber = exchangeTable.CurrentRow.Cells[1].Value.ToString();
+                exchange.Isbn = Convert.ToInt32(exchangeTable.CurrentRow.Cells[2].Value.ToString());
+                exchange.Grade = exchangeTable.CurrentRow.Cells[3].Value.ToString();
+                exchange.CheckedInDate = DateTime.Parse(exchangeTable.CurrentRow.Cells[4].Value.ToString());
+                exchange.Term = DateTime.Parse(exchangeTable.CurrentRow.Cells[5].Value.ToString());
 
+                ExchangeDetailsForm exchangeDetailsForm = new ExchangeDetailsForm();
+                exchangeDetailsForm.Exchange = exchange;
+                exchangeDetailsForm.ShowDialog();
+            }
         }
 
         public void changeEnableInsert(bool change)

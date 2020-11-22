@@ -109,6 +109,10 @@ namespace btl_qltv_ver2.repos.impl
             return false;
         }
 
+        public bool isPaid(string libraryCardNumber, int isbn, string grade)
+        {
+            return true;
+        }
 
         public Exchange updateExchange(ExchangeUpdateSdi exchangeUpdateSdi)
         {

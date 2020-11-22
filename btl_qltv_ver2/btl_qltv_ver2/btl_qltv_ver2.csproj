@@ -95,6 +95,18 @@
     <Compile Include="domain\PatronDetails.cs" />
     <Compile Include="domain\Policy.cs" />
     <Compile Include="domain\Stock.cs" />
+    <Compile Include="ExchageStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExchageStatistic.Designer.cs">
+      <DependentUpon>ExchageStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExchangeDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExchangeDetailsForm.Designer.cs">
+      <DependentUpon>ExchangeDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +360,12 @@
     <Compile Include="UiControl\StockInsertUpdateForm.Designer.cs">
       <DependentUpon>StockInsertUpdateForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ExchageStatistic.resx">
+      <DependentUpon>ExchageStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExchangeDetailsForm.resx">
+      <DependentUpon>ExchangeDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,6 +596,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\library.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

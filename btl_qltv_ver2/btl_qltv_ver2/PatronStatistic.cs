@@ -55,15 +55,21 @@ namespace btl_qltv_ver2
 
             }
 
-            pieDamage.Series["pie"].Points.AddXY("damage", patronService.sumOfDamageMedia(patron.LibraryCardNumber).ToString());
-            pieDamage.Series["pie"].Points.AddXY("safe", (patronService.sumOfMediaBorrowed(patron.LibraryCardNumber)-patronService.sumOfDamageMedia(patron.LibraryCardNumber)).ToString());
+            int amountBorrowed = patronService.sumOfMediaBorrowed(patron.LibraryCardNumber);
+            int amountReturned = patronService.sumOfMediaReturned(patron.LibraryCardNumber);
+            int amountDamage = patronService.sumOfDamageMedia(patron.LibraryCardNumber);
+            int amountBorrowing = patronService.sumOfMediaBorrowing(patron.LibraryCardNumber);
+            pieDamage.Series["pie"].Points.AddXY("safe", (amountReturned - amountDamage).ToString());
+            pieDamage.Series["pie"].Points.AddXY("damage",amountDamage.ToString());
+            pieDamage.Series["pie"].Points.AddXY("undefined", amountBorrowing.ToString());
+
+            pieTotal.Series["pie1"].Points.AddXY("borrowing", (amountBorrowing).ToString());
+            pieTotal.Series["pie1"].Points.AddXY("returned", (amountReturned).ToString());
 
             nameLabel.Text += " " + patron.Name;
             dobLabel.Text += " " + patron.DOB1.ToString();
             phoneNumberLabel.Text += " " + patron.PhoneNumber;
             addressLabel.Text += " " + patron.Address;
-            borrowedLabel.Text += " " + patronService.sumOfMediaBorrowed(patron.LibraryCardNumber).ToString();
-            damageLabel.Text += " " + patronService.sumOfDamageMedia(patron.LibraryCardNumber).ToString();
         }
 
         private void label5_Click(object sender, EventArgs e)

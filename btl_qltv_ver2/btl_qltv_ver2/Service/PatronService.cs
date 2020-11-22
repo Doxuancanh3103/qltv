@@ -31,5 +31,8 @@ namespace btl_qltv_ver2.Service
         int sumOfMediaBorrowed(String libraryCardNumber);
 
         int sumOfDamageMedia(String libraryCardNumber);
+
+        int sumOfMediaReturned(String libraryCardNumber);
+        int sumOfMediaBorrowing(String libraryCardNumber);
     }
 }

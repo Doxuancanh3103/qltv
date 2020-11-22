@@ -74,6 +74,16 @@ namespace btl_qltv_ver2.Service.impl
             return patronRepoService.sumOfMediaBorrowed(libraryCardNumber);
         }
 
+        public int sumOfMediaBorrowing(string libraryCardNumber)
+        {
+            return patronRepoService.sumOfMediaBorrowing(libraryCardNumber);
+        }
+
+        public int sumOfMediaReturned(string libraryCardNumber)
+        {
+            return patronRepoService.sumOfMediaReturned(libraryCardNumber);
+        }
+
         public Patron updatePatron(PatronUpdateSdi patronUpdateSdi)
         {
             return patronRepoService.updatePatron(patronUpdateSdi);

@@ -21,5 +21,7 @@ namespace btl_qltv_ver2.repos
         String deleteExchange(String libraryCardNumber, int isbn, String grade);
 
         Boolean isExistExchange(String libraryCardNumber, int isbn, String grade);
+
+        Boolean isPaid(String libraryCardNumber, int isbn, String grade);
     }
 }

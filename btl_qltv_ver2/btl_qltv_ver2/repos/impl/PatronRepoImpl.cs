@@ -313,10 +313,8 @@ namespace btl_qltv_ver2.repos.impl
             con = SqlServerConnection.getConnnection();
             con.Open();
             StringBuilder sql = new StringBuilder();
-            sql.Append("select count(e.ISBN) as amount from Exchange e " +
-                             " inner join Check_Out c " +
-                             " on e.LibraryCardNumber = c.LibraryCardNumber and e.ISBN = c.ISBN and e.Grade = c.Grade " +
-                             " where c.CurrentCondition != e.Grade and e.LibraryCardNumber = @libraryCardNumber");
+            sql.Append("select count(c.ISBN) as amount from Check_Out c " +
+                             " where c.CurrentCondition != c.Grade and c.LibraryCardNumber = @libraryCardNumber");
             SqlCommand command = new SqlCommand(sql.ToString(), con);
             command.Parameters.AddWithValue("libraryCardNumber", libraryCardNumber);
             int amount = 0;
@@ -336,6 +334,45 @@ namespace btl_qltv_ver2.repos.impl
             con.Open();
             StringBuilder sql = new StringBuilder();
             sql.Append("select count(ISBN) as amount from Exchange where LibraryCardNumber = @libraryCardNumber");
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("libraryCardNumber", libraryCardNumber);
+            int amount = 0;
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                amount = data.GetInt32(0);
+            }
+            data.Close();
+            con.Close();
+            return amount;
+        }
+
+        public int sumOfMediaBorrowing(string libraryCardNumber)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select count(e.ISBN) from Exchange e " +
+                       "where e.LibraryCardNumber = @libraryCardNumber and  not exists(select ISBN, Grade from Check_Out c where e.ISBN = c.ISBN and e.Grade = c.Grade and c.LibraryCardNumber = @libraryCardNumber)");
+            SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("libraryCardNumber", libraryCardNumber);
+            int amount = 0;
+            SqlDataReader data = command.ExecuteReader();
+            while (data.Read())
+            {
+                amount = data.GetInt32(0);
+            }
+            data.Close();
+            con.Close();
+            return amount;
+        }
+
+        public int sumOfMediaReturned(string libraryCardNumber)
+        {
+            con = SqlServerConnection.getConnnection();
+            con.Open();
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select count(ISBN) as amount from Check_Out where LibraryCardNumber = @libraryCardNumber");
             SqlCommand command = new SqlCommand(sql.ToString(), con);
             command.Parameters.AddWithValue("libraryCardNumber", libraryCardNumber);
             int amount = 0;
