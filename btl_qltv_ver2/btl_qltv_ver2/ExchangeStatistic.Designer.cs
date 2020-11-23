@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.exchangeStatisticTable = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeStatisticTable)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,10 @@
             this.exchangeStatisticTable.Size = new System.Drawing.Size(1306, 557);
             this.exchangeStatisticTable.TabIndex = 0;
             this.exchangeStatisticTable.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Media statistics by month for the current year";
+            this.exchangeStatisticTable.Titles.Add(title1);
             this.exchangeStatisticTable.Click += new System.EventHandler(this.exchangeStatisticTable_Click);
             // 
             // ExchangeStatistic

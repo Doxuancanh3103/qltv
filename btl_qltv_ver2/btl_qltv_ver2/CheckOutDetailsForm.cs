@@ -76,9 +76,23 @@ namespace btl_qltv_ver2.UiControl
             double deposit = checkOutService.getDeposit();
             double feeDefault = checkOutService.getFeeDefault(checkedOut.Isbn, checkedOut.Grade);
             double compensation = checkedOut.Fee - fine - feeDefault + deposit;
-            chart1.Series["pieFee"].Points.AddXY("fine", fine.ToString());
-            chart1.Series["pieFee"].Points.AddXY("init fee", (feeDefault - 10).ToString());
-            chart1.Series["pieFee"].Points.AddXY("compensation", compensation.ToString());
+            if (fine > 0)
+            {
+                chart1.Series["pieFee"].Points.AddXY("fine", fine.ToString());
+            }
+
+            if (compensation > 0)
+            {
+                chart1.Series["pieFee"].Points.AddXY("compensation", compensation.ToString());
+            }
+            chart1.Series["pieFee"].Points.AddXY("init fee", (feeDefault - 10).ToString());;
+        }
+
+        private void detailPatron_Click(object sender, EventArgs e)
+        {
+            PatronStatistic patronStatistic = new PatronStatistic();
+            patronStatistic.Patron = patronService.getPatronByLibraryCardNumber(checkedOut.LibraryCardNumber);
+            patronStatistic.ShowDialog();
         }
     }
 }

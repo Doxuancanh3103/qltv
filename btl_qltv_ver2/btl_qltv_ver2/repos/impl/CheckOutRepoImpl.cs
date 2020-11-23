@@ -70,62 +70,62 @@ namespace btl_qltv_ver2.repos.impl
             StringBuilder sql = new StringBuilder();
             sql.Append("select" + 
               " ( " +
-			  " case when 1 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 1 then isnull(c.fee, 0) end), 0) " +
+			  " case when 1 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 1 then isnull(c.fee, 0) end), 0) " +
 
               " else -1 end " +
 			  " ) as thang1, " +
 			  " ( " +
-			  " case when 2 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 2 then isnull(c.fee,0) end),0) " +
+              " case when 2 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 2 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " + 
 			  " ) as thang2, " +
 			  " ( " +
-			  " case when 3 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 3 then isnull(c.fee,0) end),0) " +
+              " case when 3 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 3 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang3, " +
 			  " ( " +
-			  " case when 4 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 4 then isnull(c.fee,0) end),0) " +
+              " case when 4 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 4 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang4, "+
 			  " ( " +
-			  " case when 5 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 5 then isnull(c.fee,0) end),0) " +
+              " case when 5 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 5 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang5, " +
 			  " ( " +
-			  " case when 6 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 6 then isnull(c.fee,0) end),0) " +
+              " case when 6 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 6 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang6, " +
 			  " ( " +
-			  " case when 7 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 7 then isnull(c.fee,0) end),0) " +
+              " case when 7 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 7 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang7, " +
 			  " ( " +
-			  " case when 8 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 8 then isnull(c.fee,0) end),0) " +
+              " case when 8 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 8 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang8, " +
 			  " ( " +
-			  " case when 9 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 9 then isnull(c.fee,0) end),0) " +
+              " case when 9 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 9 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang9, "+
 			  " ( " +
-			  " case when 10 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 10 then isnull(c.fee,0) end),0) " +
+              " case when 10 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 10 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang10, " +
 			  " ( " +
-			  " case when 11 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 11 then isnull(c.fee,0) end),0) " +
+              " case when 11 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 11 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang11, " +
 			  " ( " +
-			  " case when 12 <= MONTH(GETDATE()) then isnull(sum(case when month(c.CheckOutDate) = 12 then isnull(c.fee,0) end),0) " +
+              " case when 12 <= @maxMonth then isnull(sum(case when month(c.CheckOutDate) = 12 then isnull(c.fee,0) end),0) " +
 
               " else -1 end " +
 			  " ) as thang12 " +
@@ -134,6 +134,14 @@ namespace btl_qltv_ver2.repos.impl
               );
             SqlCommand command = new SqlCommand(sql.ToString(), con);
             command.Parameters.AddWithValue("year", year);
+            if (year < DateTime.Now.Year)
+            {
+                command.Parameters.AddWithValue("maxMonth", 12);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("maxMonth", DateTime.Now.Month);
+            }
             SqlDataReader data = command.ExecuteReader();
             while (data.Read())
             {
@@ -230,7 +238,8 @@ namespace btl_qltv_ver2.repos.impl
                        " select @feeperday = Value from Policies where Description = 'FeePerDay' " +
                         " select " +
                         " ( " +
-                        " case when DATEDIFF(day, e.Term, c.CheckOutDate) > 0 then @feeperday * DATEDIFF(day, e.Term, c.CheckOutDate) end " +
+                        " case when DATEDIFF(day, e.Term, c.CheckOutDate) > 0 then @feeperday * DATEDIFF(day, e.Term, c.CheckOutDate) else" +
+                        " 0 end " +
                         " ) as tienphat " +
                         " from Check_Out c inner " +
                         " join Exchange e " +

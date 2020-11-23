@@ -91,8 +91,9 @@ namespace btl_qltv_ver2.repos.impl
             sql.Append("select  CONCAT(fName,' ',mName,' ',lName) as name," +
                                " DOB," +
                                " phoneNumber," +
-                               " Address from Patron where libraryCardNumber = " + libraryCardNumber);
+                               " Address from Patron where libraryCardNumber = @librarycardnumber" );
             SqlCommand command = new SqlCommand(sql.ToString(), con);
+            command.Parameters.AddWithValue("librarycardnumber", libraryCardNumber);
             SqlDataReader data = command.ExecuteReader();
             while (data.Read())
             {

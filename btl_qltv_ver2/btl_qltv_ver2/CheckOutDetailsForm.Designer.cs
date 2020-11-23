@@ -42,6 +42,8 @@
             this.isbnLabel = new System.Windows.Forms.Label();
             this.roleTypeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.salaryLabel = new System.Windows.Forms.Label();
             this.ssnLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,14 +65,12 @@
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.dobLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // currentConditionLabel
@@ -192,6 +192,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(408, 792);
             this.panel2.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.chart1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 514);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(406, 276);
+            this.panel5.TabIndex = 20;
+            // 
+            // chart1
+            // 
+            this.chart1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "pieFee";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(406, 276);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // salaryLabel
             // 
@@ -374,6 +403,7 @@
             this.detailPatron.Text = "Detail";
             this.detailPatron.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.detailPatron.UseVisualStyleBackColor = false;
+            this.detailPatron.Click += new System.EventHandler(this.detailPatron_Click);
             // 
             // label6
             // 
@@ -426,35 +456,6 @@
             this.nameLabel.TabIndex = 10;
             this.nameLabel.Text = "Name: ";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.chart1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 514);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(406, 276);
-            this.panel5.TabIndex = 20;
-            // 
-            // chart1
-            // 
-            this.chart1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "pieFee";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(406, 276);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
             // CheckOutDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -468,14 +469,14 @@
             this.Load += new System.EventHandler(this.CheckOutDetailsForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
